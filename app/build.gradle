@@ -1,0 +1,75 @@
+plugins {
+    alias(libs.plugins.android.application)
+}
+
+android {
+    namespace 'com.idefant.voicekb'
+    compileSdkVersion 36
+
+    defaultConfig {
+        applicationId "com.idefant.voicekb"
+        minSdk 26
+        targetSdk 35
+        versionCode 1
+        versionName "0.1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    signingConfigs {
+        release {
+            def keystorePath = System.getenv("ANDROID_KEYSTORE_PATH")
+            def keystorePassword = System.getenv("ANDROID_KEYSTORE_PASSWORD")
+            def keyAlias = System.getenv("ANDROID_KEY_ALIAS")
+            def keyPassword = System.getenv("ANDROID_KEY_PASSWORD")
+
+            if (keystorePath && keystorePassword && keyAlias && keyPassword) {
+                storeFile file(keystorePath)
+                storePassword keystorePassword
+                this.keyAlias keyAlias
+                this.keyPassword keyPassword
+            } else {
+                initWith signingConfigs.debug
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildFeatures {
+        buildConfig = true
+    }
+    packagingOptions {
+        resources {
+            excludes += ['META-INF/DEPENDENCIES']
+        }
+    }
+
+}
+
+dependencies {
+
+    implementation libs.appcompat
+    implementation libs.material
+    implementation libs.activity
+    implementation libs.constraintlayout
+    implementation libs.preference
+    testImplementation libs.junit
+    androidTestImplementation libs.ext.junit
+    androidTestImplementation libs.espresso.core
+
+    implementation libs.openai.java
+    implementation libs.converter.jackson
+    implementation libs.commons.validator
+    implementation libs.colorpicker
+}

@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_api_settings"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:isScrollContainer="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/voicekb_primary_api_configuration"
+            android:textColor="@color/voicekb_blue"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/change_transcription_provider"
+            android:textColor="@color/voicekb_blue" />
+
+        <Spinner
+            android:id="@+id/api_settings_transcription_provider_spn"
+            android:layout_width="match_parent"
+            android:layout_height="48dp" />
+
+        <TextView
+            android:id="@+id/api_settings_provider_summary_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textColor="?android:attr/textColorSecondary"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/api_settings_transcription_model_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/change_transcription_model"
+            android:textColor="@color/voicekb_blue" />
+
+        <Spinner
+            android:id="@+id/api_settings_transcription_model_spn"
+            android:layout_width="match_parent"
+            android:layout_height="48dp" />
+
+        <EditText
+            android:id="@+id/api_settings_transcription_custom_model_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/voicekb_custom_transcription_model_hint"
+            android:inputType="textNoSuggestions"
+            android:visibility="gone" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/enter_transcription_api_key"
+            android:textColor="@color/voicekb_blue" />
+
+        <EditText
+            android:id="@+id/api_settings_transcription_api_key_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/voicekb_custom_api_key_hint"
+            android:importantForAutofill="no"
+            android:inputType="textNoSuggestions|textVisiblePassword" />
+
+        <Switch
+            android:id="@+id/api_settings_additional_parameters_sw"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/voicekb_additional_parameters" />
+
+        <LinearLayout
+            android:id="@+id/api_settings_additional_parameters_wrapper"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/voicekb_additional_parameters_url"
+                android:textColor="@color/voicekb_blue" />
+
+            <EditText
+                android:id="@+id/api_settings_additional_url_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/voicekb_custom_server_host_hint"
+                android:inputType="textNoSuggestions|textUri" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@string/voicekb_additional_parameters_headers"
+                android:textColor="@color/voicekb_blue" />
+
+            <EditText
+                android:id="@+id/api_settings_additional_headers_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="top"
+                android:hint="@string/voicekb_additional_parameters_headers_hint"
+                android:inputType="textMultiLine|textNoSuggestions|textVisiblePassword"
+                android:minLines="3" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/api_settings_check_token_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/voicekb_check_api_token" />
+
+        <Switch
+            android:id="@+id/api_settings_vpn_enabled_sw"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/voicekb_vpn_config_enabled" />
+
+        <LinearLayout
+            android:id="@+id/api_settings_vpn_wrapper"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@string/voicekb_vpn_api_configuration"
+                android:textColor="@color/voicekb_blue"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/change_transcription_provider"
+                android:textColor="@color/voicekb_blue" />
+
+            <Spinner
+                android:id="@+id/api_settings_vpn_provider_spn"
+                android:layout_width="match_parent"
+                android:layout_height="48dp" />
+
+            <TextView
+                android:id="@+id/api_settings_vpn_provider_summary_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textColor="?android:attr/textColorSecondary"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/api_settings_vpn_model_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/change_transcription_model"
+                android:textColor="@color/voicekb_blue" />
+
+            <Spinner
+                android:id="@+id/api_settings_vpn_model_spn"
+                android:layout_width="match_parent"
+                android:layout_height="48dp" />
+
+            <EditText
+                android:id="@+id/api_settings_vpn_custom_model_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/voicekb_custom_transcription_model_hint"
+                android:inputType="textNoSuggestions"
+                android:visibility="gone" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/enter_transcription_api_key"
+                android:textColor="@color/voicekb_blue" />
+
+            <EditText
+                android:id="@+id/api_settings_vpn_api_key_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/voicekb_custom_api_key_hint"
+                android:importantForAutofill="no"
+                android:inputType="textNoSuggestions|textVisiblePassword" />
+
+            <Switch
+                android:id="@+id/api_settings_vpn_additional_parameters_sw"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/voicekb_additional_parameters" />
+
+            <LinearLayout
+                android:id="@+id/api_settings_vpn_additional_parameters_wrapper"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/voicekb_additional_parameters_url"
+                    android:textColor="@color/voicekb_blue" />
+
+                <EditText
+                    android:id="@+id/api_settings_vpn_additional_url_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/voicekb_custom_server_host_hint"
+                    android:inputType="textNoSuggestions|textUri" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="@string/voicekb_additional_parameters_headers"
+                    android:textColor="@color/voicekb_blue" />
+
+                <EditText
+                    android:id="@+id/api_settings_vpn_additional_headers_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top"
+                    android:hint="@string/voicekb_additional_parameters_headers_hint"
+                    android:inputType="textMultiLine|textNoSuggestions|textVisiblePassword"
+                    android:minLines="3" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/api_settings_vpn_check_token_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@string/voicekb_check_api_token" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

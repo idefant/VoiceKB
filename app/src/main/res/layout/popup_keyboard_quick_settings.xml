@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/quick_settings_scrim"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/quick_settings_panel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_keyboard_panel"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="18dp"
+            android:tag="panel_surface">
+
+            <FrameLayout
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:background="@drawable/bg_keyboard_panel_icon"
+                android:tag="panel_icon_container">
+
+                <ImageView
+                    android:layout_width="19dp"
+                    android:layout_height="19dp"
+                    android:layout_gravity="center"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_lucide_mic_24"
+                    android:tag="panel_accent_icon" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:tag="panel_title"
+                    android:text="@string/app_name"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:tag="panel_muted"
+                    android:text="@string/voicekb_quick_settings"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View style="@style/KeyboardPanelDivider" />
+
+        <LinearLayout
+            android:id="@+id/quick_settings_keyboard_settings"
+            style="@style/KeyboardPanelRowContainer">
+
+            <ImageView
+                style="@style/KeyboardPanelRowIcon"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_lucide_settings_24" />
+
+            <TextView
+                style="@style/KeyboardPanelRowText"
+                android:text="@string/voicekb_keyboard_settings" />
+
+            <ImageView
+                style="@style/KeyboardPanelChevron"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_lucide_chevron_right_24" />
+        </LinearLayout>
+
+        <View style="@style/KeyboardPanelDivider" />
+
+        <LinearLayout
+            android:id="@+id/quick_settings_language"
+            style="@style/KeyboardPanelRowContainer">
+
+            <ImageView
+                style="@style/KeyboardPanelRowIcon"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_lucide_languages_24" />
+
+            <TextView
+                style="@style/KeyboardPanelRowText"
+                android:text="@string/voicekb_language_selection" />
+
+            <TextView
+                android:id="@+id/quick_settings_language_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:tag="panel_accent"
+                android:text="@string/voicekb_detect_short"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                style="@style/KeyboardPanelChevron"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_lucide_chevron_right_24" />
+        </LinearLayout>
+
+        <View style="@style/KeyboardPanelDivider" />
+
+        <LinearLayout
+            android:id="@+id/quick_settings_change_input_method"
+            style="@style/KeyboardPanelRowContainer">
+
+            <ImageView
+                style="@style/KeyboardPanelRowIcon"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_lucide_keyboard_24" />
+
+            <TextView
+                style="@style/KeyboardPanelRowText"
+                android:text="@string/voicekb_change_input_method" />
+
+            <ImageView
+                style="@style/KeyboardPanelChevron"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_lucide_chevron_right_24" />
+        </LinearLayout>
+
+        <View style="@style/KeyboardPanelDivider" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:gravity="center_vertical|end"
+            android:orientation="horizontal"
+            android:paddingHorizontal="16dp"
+            android:tag="panel_surface">
+
+            <TextView
+                android:id="@+id/quick_settings_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:foreground="?attr/selectableItemBackground"
+                android:gravity="center"
+                android:paddingHorizontal="10dp"
+                android:tag="panel_accent"
+                android:text="@string/voicekb_cancel"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

@@ -1,0 +1,273 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="app_name" translatable="false">VoiceKB</string>
+
+    <string name="voicekb_lang_afrikaans">Afrikaans</string>
+    <string name="voicekb_lang_albanian">Albanian</string>
+    <string name="voicekb_lang_arabic">Arabic</string>
+    <string name="voicekb_lang_armenian">Armenian</string>
+    <string name="voicekb_lang_azerbaijani">Azerbaijani</string>
+    <string name="voicekb_lang_basque">Basque</string>
+    <string name="voicekb_lang_belarusian">Belarusian</string>
+    <string name="voicekb_lang_bengali">Bengali</string>
+    <string name="voicekb_lang_bulgarian">Bulgarian</string>
+    <string name="voicekb_lang_cantonese_cn">Cantonese (CN)</string>
+    <string name="voicekb_lang_cantonese_hk">Cantonese (HK)</string>
+    <string name="voicekb_lang_catalan">Catalan</string>
+    <string name="voicekb_lang_czech">Czech</string>
+    <string name="voicekb_lang_danish">Danish</string>
+    <string name="voicekb_lang_dutch">Dutch</string>
+    <string name="voicekb_lang_english">English</string>
+    <string name="voicekb_lang_estonian">Estonian</string>
+    <string name="voicekb_lang_finnish">Finnish</string>
+    <string name="voicekb_lang_french">French</string>
+    <string name="voicekb_lang_galician">Galician</string>
+    <string name="voicekb_lang_german">German</string>
+    <string name="voicekb_lang_greek">Greek</string>
+    <string name="voicekb_lang_hebrew">Hebrew</string>
+    <string name="voicekb_lang_hindi">Hindi</string>
+    <string name="voicekb_lang_hungarian">Hungarian</string>
+    <string name="voicekb_lang_indonesian">Indonesian</string>
+    <string name="voicekb_lang_italian">Italian</string>
+    <string name="voicekb_lang_japanese">Japanese</string>
+    <string name="voicekb_lang_kazakh">Kazakh</string>
+    <string name="voicekb_lang_korean">Korean</string>
+    <string name="voicekb_lang_latvian">Latvian</string>
+    <string name="voicekb_lang_lithuanian">Lithuanian</string>
+    <string name="voicekb_lang_macedonian">Macedonian</string>
+    <string name="voicekb_lang_mandarin_cn">Mandarin (CN)</string>
+    <string name="voicekb_lang_mandarin_tw">Mandarin (TW)</string>
+    <string name="voicekb_lang_marathi">Marathi</string>
+    <string name="voicekb_lang_nepali">Nepali</string>
+    <string name="voicekb_lang_nynorsk">Nynorsk</string>
+    <string name="voicekb_lang_persian">Persian</string>
+    <string name="voicekb_lang_polish">Polish</string>
+    <string name="voicekb_lang_portuguese">Portuguese</string>
+    <string name="voicekb_lang_punjabi">Punjabi</string>
+    <string name="voicekb_lang_romanian">Romanian</string>
+    <string name="voicekb_lang_russian">Russian</string>
+    <string name="voicekb_lang_serbian">Serbian</string>
+    <string name="voicekb_lang_slovak">Slovak</string>
+    <string name="voicekb_lang_slovenian">Slovenian</string>
+    <string name="voicekb_lang_spanish">Spanish</string>
+    <string name="voicekb_lang_swahili">Swahili</string>
+    <string name="voicekb_lang_swedish">Swedish</string>
+    <string name="voicekb_lang_tamil">Tamil</string>
+    <string name="voicekb_lang_thai">Thai</string>
+    <string name="voicekb_lang_turkish">Turkish</string>
+    <string name="voicekb_lang_ukrainian">Ukrainian</string>
+    <string name="voicekb_lang_urdu">Urdu</string>
+    <string name="voicekb_lang_vietnamese">Vietnamese</string>
+    <string name="voicekb_lang_welsh">Welsh</string>
+
+    <string name="voicekb_settings_title">VoiceKB Settings</string>
+    <string name="voicekb_microphone_permission_granted">Microphone permission granted ✅.</string>
+    <string name="voicekb_microphone_permission_denied">Microphone permission denied ❌.</string>
+    <string name="voicekb_record">Record</string>
+    <string name="voicekb_send">Send (%1$s)</string>
+    <string name="voicekb_sending">Sending …</string>
+    <string name="voicekb_timeout_msg">Timeout exceeded while connecting to %1$s. Maybe the provider is overloaded or you have a poor internet connection.</string>
+    <string name="voicekb_invalid_api_key_msg">Invalid API key. Open settings to correct it?</string>
+    <string name="voicekb_quota_exceeded_msg">%1$s quota exceeded. Check your provider account or API settings.</string>
+    <string name="voicekb_internet_error_msg">Couldn\'t connect to %1$s. Please check your internet connection.</string>
+    <string name="voicekb_okay">Okay</string>
+    <string name="voicekb_settings_api_key_title">Change OpenAI API key 🔑</string>
+    <string name="voicekb_settings_vibration_title">Enable Haptic feedback 📳</string>
+    <string name="voicekb_settings_vibration_summary">Vibrate on button presses and errors</string>
+    <string name="voicekb_about" translatable="false">VoiceKB v%1$s\nfrom Russia with hate</string>
+    <string name="voicekb_settings_usage">View usage 📊</string>
+    <string name="voicekb_yes">Yes</string>
+    <string name="voicekb_no">No</string>
+    <string name="voicekb_usage_reset_usage_title">Reset usage?</string>
+    <string name="voicekb_usage_reset_usage_message">Are you sure to reset VoiceKB usage?</string>
+    <string name="voicekb_onboarding_welcome">Welcome to\nVoiceKB\n→</string>
+    <string name="voicekb_onboarding_permissions_microphone_request">VoiceKB needs your permission to use the microphone. Click the button below to grant this permission.</string>
+    <string name="voicekb_onboarding_permissions_microphone_button">Grant microphone permission</string>
+    <string name="voicekb_onboarding_permissions_keyboard_request">VoiceKB must be activated as a keyboard in the settings. Click on the button below to enable this.\n\nYou can also activate the keyboard button on the navigation bar to switch to VoiceKB more quickly.</string>
+    <string name="voicekb_onboarding_permissions_keyboard_button">Enable VoiceKB keyboard</string>
+    <string name="voicekb_keyboard_disabled">VoiceKB keyboard disabled ❌.</string>
+    <string name="voicekb_keyboard_enabled">VoiceKB keyboard enabled ✅.</string>
+    <string name="voicekb_api_key_hint" translatable="false">API key</string>
+    <string name="voicekb_groq_api_key_hint" translatable="false">gsk_...</string>
+    <string name="voicekb_openai_api_key_hint" translatable="false">sk-...</string>
+    <string name="voicekb_custom_api_key_hint">API key</string>
+    <string name="voicekb_onboarding_api_key_finish">Set API key and finish setup</string>
+    <string name="voicekb_onboarding_complete_dialog_title">Just some final information</string>
+    <string name="voicekb_onboarding_complete_dialog_message">You can switch between your normal keyboard and VoiceKB at any time. Simply click on the keyboard status icon below your standard keyboard and select VoiceKB.\n\nIf you want to know the full potential of VoiceKB, go to the settings and check out the How-To page for detailed app instructions.\n\nVoiceKB does not send any of your transcribed audios/texts anywhere (except to OpenAI for transcription of course). Since the developer values data protection, he does not receive any information about what you are recording. If you don\'t trust these words, feel free to look into the source code, to which you will find a link in the settings.\n\nHave fun with it 💪</string>
+    <string name="voicekb_settings_instant_recording_title">Instant recording 🎙️</string>
+    <string name="voicekb_settings_instant_recording_summary">Start recording as soon as you switch to VoiceKB keyboard</string>
+    <string name="voicekb_settings_api_title">API settings</string>
+    <string name="voicekb_settings_about_title">About</string>
+    <string name="voicekb_custom_host_hint" translatable="false">https://api.example.com/</string>
+    <string name="voicekb_detect_automatically">Detect</string>
+    <string name="voicekb_settings_prompts_title">Change transcription style prompt 💬</string>
+    <string name="voicekb_unsaved_changes_title">Discard changes?</string>
+    <string name="voicekb_unsaved_changes_message">You have unsaved changes. What would you like to do?</string>
+    <string name="voicekb_discard_changes">Discard</string>
+    <string name="voicekb_save">Save</string>
+    <string name="voicekb_enable_keyboard_title">Enable VoiceKB keyboard?</string>
+    <string name="voicekb_enable_keyboard_message">The VoiceKB keyboard isn\'t enabled in the system settings anymore. Do you want to open the system keyboard settings to correct this?</string>
+    <string name="voicekb_default_overlay_characters" translatable="false">()-:!?,.</string>
+    <string name="voicekb_settings_overlay_characters_title">Edit custom characters (hold ⏎ button)</string>
+    <string name="voicekb_overlay_characters_empty">You have to set at least one character.</string>
+    <string name="voicekb_settings_auto_enter_title">Auto Enter after transcription ⏎</string>
+    <string name="voicekb_settings_auto_enter_summary">Automatically press the Enter button after every transcription.</string>
+    <string name="voicekb_emoji_picker_title">Pick an emoji</string>
+    <string name="voicekb_number_pad_title">Number pad</string>
+    <string name="voicekb_usage_cost" translatable="false">%1$.2f $</string>
+    <string name="voicekb_usage_audio_time" translatable="false">%1$d min, %2$d s</string>
+    <string name="voicekb_usage_no_usage">There is nothing to see here yet.\nStart transcription with VoiceKB\nto see the usage here.</string>
+    <string name="voicekb_usage_buy_new_credits">Buy new credits at openai.com</string>
+    <string name="voicekb_usage_reset">Reset usage?</string>
+    <string name="voicekb_usage">Usage</string>
+    <string name="voicekb_usage_total_cost">Estimated total cost: %1$.2f $</string>
+    <string name="voicekb_usage_input_tokens_description">Total usage of input tokens</string>
+    <string name="voicekb_usage_output_tokens_description">Total usage of output tokens</string>
+    <string name="voicekb_usage_audio_time_description">Total recording time</string>
+    <string name="voicekb_usage_model_cost_description">Estimated cost for this model</string>
+    <string name="voicekb_settings_prompts_summary">Change the style prompt for transcriptions</string>
+    <string name="voicekb_content_size_limit_msg">Your audio file is too large (>25 MB) or too long (>25 minutes).</string>
+    <string name="voicekb_choose_audio_file">Choose an audio file</string>
+    <string name="voicekb_file_too_large_title">Media file too large</string>
+    <string name="voicekb_file_too_large_message">Sadly, this media file is too large. Whisper accepts a maximum of 25 MB at once. 🥲</string>
+    <string name="voicekb_file_copying_to_cache">Copying file to cache …</string>
+    <string name="voicekb_settings_enable_resend_button_title">Resend button 🔄</string>
+    <string name="voicekb_settings_enable_resend_button_summary">Show a button to send the previous recording</string>
+    <string name="voicekb_settings_file_upload_title">File upload 📄</string>
+    <string name="voicekb_settings_file_upload_summary">Show a separate button for transcribing an audio or video file</string>
+    <string name="voicekb_file_transcription">Transcribe audio or video file</string>
+    <string name="voicekb_voice_record_button">Start or finish voice input</string>
+    <string name="voicekb_voice_pause_button">Pause or resume voice input</string>
+    <string name="voicekb_voice_reset_button">Reset voice input</string>
+    <string name="voicekb_voice_recording_error">Could not start microphone recording.</string>
+    <string name="voicekb_voice_transcription_error">Could not transcribe this recording with %1$s. Check your API settings and internet connection.</string>
+    <string name="voicekb_settings_cache">Cache size: %1$d files (%2$.1f MB)</string>
+    <string name="voicekb_settings_cache_summary">Tap to clear cache</string>
+    <string name="voicekb_cache_cleared">VoiceKB cache cleared.</string>
+    <string name="voicekb_cache_clear_title">Clear cache?</string>
+    <string name="voicekb_cache_clear_message">Are you sure to clear the VoiceKB cache?</string>
+    <string name="voicekb_format_not_supported_msg">This audio file format is not supported.</string>
+    <string name="voicekb_settings_input_languages_title">Input languages 🌎</string>
+    <string name="voicekb_settings_app_language_title">App language 🌎</string>
+    <string name="voicekb_language_system">System default</string>
+    <string name="voicekb_language_english">English</string>
+    <string name="voicekb_language_german">German</string>
+    <string name="voicekb_language_spanish">Spanish</string>
+    <string name="voicekb_language_portuguese">Portuguese</string>
+    <string name="voicekb_language_russian">Russian</string>
+    <string name="voicekb_input_languages_empty">You have to select at least one input language.</string>
+    <string name="voicekb_settings_audio_focus_title">Audio focus ⏸️</string>
+    <string name="voicekb_settings_audio_focus_summary">Pause background media while recording</string>
+    <string name="voicekb_settings_github">Contribute 💡</string>
+    <string name="voicekb_settings_github_summary">Open the project on GitHub</string>
+    <string name="voicekb_settings_proxy_enabled_title">Use Proxy 🛡️</string>
+    <string name="voicekb_settings_proxy_host_title">Proxy address</string>
+    <string name="voicekb_settings_proxy_hint" translatable="false">[socks5|http]://[user:pass@]host:port</string>
+    <string name="voicekb_proxy_invalid_title">Invalid proxy address</string>
+    <string name="voicekb_proxy_invalid_message">Your proxy address must have the following format: [socks5|http]://[user:pass@]host:port. Please check this again.</string>
+    <string name="voicekb_settings_api_settings">Change API and model settings 🔑</string>
+    <string name="voicekb_settings_api_settings_summary">Open settings for changing API providers and models</string>
+    <string name="voicekb_api_settings">API and model settings</string>
+    <string name="voicekb_custom_provider">Custom</string>
+    <string name="voicekb_transcription_provider">transcription provider</string>
+    <string name="voicekb_primary_api_configuration">Primary configuration</string>
+    <string name="voicekb_vpn_api_configuration">VPN configuration</string>
+    <string name="voicekb_vpn_config_enabled">Use alternative configuration on VPN</string>
+    <string name="voicekb_additional_parameters">Additional parameters</string>
+    <string name="voicekb_additional_parameters_url">URL</string>
+    <string name="voicekb_additional_parameters_headers">Headers</string>
+    <string name="voicekb_additional_parameters_headers_hint">Header-Name: value</string>
+    <string name="voicekb_check_api_token">Check API token</string>
+    <string name="voicekb_checking_api_token">Checking...</string>
+    <string name="voicekb_api_check_success_title">Token works</string>
+    <string name="voicekb_api_check_success_message">%1$s accepted this token.</string>
+    <string name="voicekb_api_check_failed_title">Token check failed</string>
+    <string name="voicekb_api_check_failed_message">Could not check the token with %1$s.</string>
+    <string name="voicekb_api_check_failed_message_with_code">%1$s returned HTTP %2$d.</string>
+    <string name="voicekb_api_check_no_details">No response body.</string>
+    <string name="voicekb_show_details">Show details</string>
+    <string name="voicekb_api_check_unsupported_provider">Token check is available only for OpenAI and Groq.</string>
+    <string name="voicekb_api_config_missing_key">Enter an API key for %1$s first.</string>
+    <string name="voicekb_api_config_missing_url">Enter a custom endpoint URL first.</string>
+    <string name="voicekb_api_config_missing_model">Enter a custom transcription model first.</string>
+    <string name="voicekb_api_config_invalid_url">The endpoint URL must start with http:// or https://.</string>
+    <string name="voicekb_api_config_invalid_headers">Check additional headers: %1$s</string>
+    <string name="voicekb_onboarding_language_title">Choose the app language</string>
+    <string name="voicekb_onboarding_provider_title">Choose a transcription provider</string>
+    <string name="voicekb_onboarding_set_up_later">Set up later</string>
+    <string name="voicekb_onboarding_skip_api_message">You can set up an API token later in VoiceKB settings. Voice input will ask you to complete the API configuration before transcription starts.</string>
+    <string name="voicekb_onboarding_groq_instruction_html"><![CDATA[
+        Groq is fast and has a free tier that is usually enough to try VoiceKB.<br><br>
+        1. Open <a href="https://console.groq.com/keys">Groq API Keys</a>.<br>
+        2. Create a new key.<br>
+        3. Paste the key below. It usually starts with <b>gsk_</b>.
+    ]]></string>
+    <string name="voicekb_onboarding_openai_instruction_html"><![CDATA[
+        OpenAI is the official provider for OpenAI transcription models. Usage may require paid API credits.<br><br>
+        1. Open <a href="https://platform.openai.com/api-keys">OpenAI API Keys</a>.<br>
+        2. Create a new secret key.<br>
+        3. Paste the key below. It usually starts with <b>sk-</b>.
+    ]]></string>
+    <string name="voicekb_custom_server_host_hint" translatable="false">https://api.example.com/v1/</string>
+    <string name="voicekb_custom_transcription_model_hint" translatable="false">example-v1-mini</string>
+    <string name="change_transcription_provider">Change transcription provider</string>
+    <string name="change_transcription_model">Change transcription model</string>
+    <string name="enter_transcription_api_key">Enter transcription API key</string>
+    <string name="voicekb_groq_provider_summary">Groq is fast and currently offers a free tier for speech transcription.</string>
+    <string name="voicekb_openai_provider_summary">OpenAI uses official OpenAI transcription models and may require paid API credits.</string>
+    <string name="voicekb_custom_provider_summary">Use an OpenAI-compatible endpoint, for example your own proxy server.</string>
+    <string name="set_your_custom_transcription_server_host">Set your custom transcription server host</string>
+    <string name="set_your_custom_transcription_model">Set your custom transcription model</string>
+    <string name="voicekb_usage_model_provider_openai" translatable="false">OpenAI</string>
+    <string name="voicekb_usage_model_provider_groq" translatable="false">Groq</string>
+    <string name="voicekb_usage_model_provider_custom">Custom</string>
+    <string name="voicekb_settings_theme_title">Theme settings</string>
+    <string name="voicekb_light">Light</string>
+    <string name="voicekb_dark">Dark</string>
+    <string name="voicekb_settings_theme">Theme ⚫ ⚪</string>
+    <string name="voicekb_settings_accent_color">Choose an accent color 🎨</string>
+    <string name="voicekb_settings_accent_color_summary">The accent color will appear on buttons on the keyboard</string>
+    <string name="voicekb_settings_accent_color_word">accent color</string>
+    <string name="voicekb_settings_use_bluetooth_mic_title">Use Bluetooth microphone 🎧</string>
+    <string name="voicekb_settings_use_bluetooth_mic_summary">Prefer Bluetooth microphone when available (headsets or car systems)</string>
+    <string name="voicekb_system_prompts">System Prompts</string>
+    <string name="voicekb_transcription_style_prompt_title">Transcription style prompt</string>
+    <string name="voicekb_transcription_style_prompt_nothing">No transcription style prompt</string>
+    <string name="voicekb_transcription_style_prompt_punctuation_capitalization">Use punctuation and capitalization</string>
+    <string name="voicekb_transcription_style_prompt_custom">Custom transcription style prompt</string>
+    <string name="voicekb_transcription_style_prompt_custom_hint">This sentence has capitalization and punctuation.</string>
+    <string name="voicekb_settings_animations_title">Show animations ✨</string>
+    <string name="voicekb_settings_animations_summary">Show touch feedback animations on the keyboard</string>
+    <string name="voicekb_quick_settings">Quick settings</string>
+    <string name="voicekb_language_selection">Language selection</string>
+    <string name="voicekb_keyboard_settings">Keyboard settings</string>
+    <string name="voicekb_return_to_previous_keyboard">Return to the previous input method after inserting text</string>
+    <string name="voicekb_change_input_method">Change input method</string>
+    <string name="voicekb_cancel">Cancel</string>
+    <string name="voicekb_space">space</string>
+    <string name="voicekb_resend">Resend previous recording</string>
+    <string name="voicekb_backspace">Backspace</string>
+    <string name="voicekb_enter">Enter</string>
+    <string name="voicekb_undo">Undo</string>
+    <string name="voicekb_redo">Redo</string>
+    <string name="voicekb_reset_recording">Reset recording</string>
+    <string name="voicekb_settings_quick_settings_button_title">Show quick settings button</string>
+    <string name="voicekb_settings_quick_settings_button_summary">Show a shortcut in the VoiceKB keyboard header</string>
+    <string name="voicekb_settings_return_to_previous_keyboard_summary">Automatically switch back after text has been inserted</string>
+    <string name="voicekb_detect_short" translatable="false">DETECT</string>
+    <string name="voicekb_smart_insertion_title">Smart insertion</string>
+    <string name="voicekb_smart_insertion_settings_summary">Adjust capitalization before inserting transcribed text</string>
+    <string name="voicekb_smart_insertion_description">VoiceKB reads a small part of the text before the cursor and adjusts the beginning of the transcription before inserting it. Only the first letter of the first word and a possible leading space are changed.</string>
+    <string name="voicekb_smart_insertion_sentence_summary">Sentence endings are detected by ., !, ?, …, including closing quotes or brackets after the punctuation mark. If the current editor does not provide text before the cursor, VoiceKB inserts the transcription unchanged.</string>
+    <string name="voicekb_smart_insertion_preserve_abbreviations_title">Keep abbreviations unchanged</string>
+    <string name="voicekb_smart_insertion_preserve_abbreviations_summary">An abbreviation is a word with at least two uppercase letters.</string>
+    <string name="voicekb_smart_insertion_capitalize_after_sentence_title">Capitalize after sentence end or empty context</string>
+    <string name="voicekb_smart_insertion_capitalize_after_sentence_summary">Make the first letter uppercase when there is no previous text or the previous sentence is finished.</string>
+    <string name="voicekb_smart_insertion_lowercase_unfinished_title">Lowercase inside unfinished sentence</string>
+    <string name="voicekb_smart_insertion_lowercase_unfinished_summary">Make the first letter lowercase when the previous sentence is not finished.</string>
+    <string name="voicekb_smart_insertion_markdown_list_title">Capitalize after Markdown list marker</string>
+    <string name="voicekb_smart_insertion_markdown_list_summary">Keep list items capitalized after markers like -, +, *, - [ ], or - [x] followed by a space.</string>
+    <string name="voicekb_smart_insertion_quote_title">Capitalize after quote marker</string>
+    <string name="voicekb_smart_insertion_quote_summary">Keep quoted text capitalized after the Markdown quote marker &gt; followed by a space.</string>
+    <string name="voicekb_smart_insertion_blacklist_title">Case-preserve blacklist</string>
+    <string name="voicekb_smart_insertion_blacklist_summary">One word per line. If a word contains an apostrophe, only the part before the apostrophe is checked.</string>
+</resources>

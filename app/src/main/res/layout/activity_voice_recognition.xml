@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/voice_recognition_dialog"
+    android:layout_width="324dp"
+    android:layout_height="222dp"
+    android:background="@drawable/bg_voice_recognition_dialog">
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/voice_recognition_reset_btn"
+        style="@style/Widget.Material3.Button.IconButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="64dp"
+        android:contentDescription="@string/voicekb_voice_reset_button"
+        android:insetLeft="0dp"
+        android:insetTop="0dp"
+        android:insetRight="0dp"
+        android:insetBottom="0dp"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:padding="14dp"
+        android:visibility="invisible"
+        app:backgroundTint="@color/voicekb_keyboard_danger_container_light"
+        app:cornerRadius="15dp"
+        app:icon="@drawable/ic_lucide_trash_24"
+        app:iconGravity="textStart"
+        app:iconPadding="0dp"
+        app:iconSize="20dp"
+        app:iconTint="@color/voicekb_keyboard_danger_icon_light"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+
+    <FrameLayout
+        android:id="@+id/voice_recognition_record_container"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/voice_recognition_record_btn"
+            style="@style/Widget.Material3.Button.IconButton"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:contentDescription="@string/voicekb_voice_record_button"
+            android:insetLeft="0dp"
+            android:insetTop="0dp"
+            android:insetRight="0dp"
+            android:insetBottom="0dp"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            app:backgroundTint="@color/voicekb_keyboard_primary"
+            app:cornerRadius="48dp" />
+
+        <ImageView
+            android:id="@+id/voice_recognition_record_icon"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_gravity="top|center_horizontal"
+            android:layout_marginTop="29dp"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_lucide_mic_24"
+            app:tint="@color/voicekb_white" />
+
+        <TextView
+            android:id="@+id/voice_recognition_timer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginBottom="20dp"
+            android:textColor="@color/voicekb_white"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            tools:text="00:12"
+            tools:visibility="visible" />
+
+        <ProgressBar
+            android:id="@+id/voice_recognition_progress"
+            style="?android:attr/progressBarStyleSmall"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_gravity="center"
+            android:indeterminateTint="@color/voicekb_white"
+            android:visibility="gone" />
+    </FrameLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/voice_recognition_pause_btn"
+        style="@style/Widget.Material3.Button.IconButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="42dp"
+        android:contentDescription="@string/voicekb_voice_pause_button"
+        android:insetLeft="0dp"
+        android:insetTop="0dp"
+        android:insetRight="0dp"
+        android:insetBottom="0dp"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:padding="14dp"
+        android:visibility="invisible"
+        app:backgroundTint="@color/voicekb_keyboard_button_light"
+        app:cornerRadius="15dp"
+        app:icon="@drawable/ic_lucide_pause_24"
+        app:iconGravity="textStart"
+        app:iconPadding="0dp"
+        app:iconSize="20dp"
+        app:iconTint="@color/voicekb_keyboard_icon_light"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+
+    <LinearLayout
+        android:id="@+id/voice_recognition_footer"
+        android:layout_width="wrap_content"
+        android:layout_height="26dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <View
+            android:id="@+id/voice_recognition_status_dot"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:background="@drawable/bg_status_dot" />
+
+        <TextView
+            android:id="@+id/voice_recognition_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/app_name"
+            android:textColor="@color/voicekb_keyboard_text_light"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/voice_recognition_language_btn"
+            style="@style/Widget.Material3.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="26dp"
+            android:layout_marginStart="8dp"
+            android:insetLeft="0dp"
+            android:insetTop="0dp"
+            android:insetRight="0dp"
+            android:insetBottom="0dp"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:paddingStart="8dp"
+            android:paddingEnd="6dp"
+            android:text="@string/voicekb_detect_short"
+            android:textColor="@color/voicekb_keyboard_primary_pressed"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            app:backgroundTint="@color/voicekb_keyboard_language_light"
+            app:cornerRadius="9dp"
+            app:icon="@drawable/ic_lucide_chevron_down_24"
+            app:iconGravity="textEnd"
+            app:iconPadding="4dp"
+            app:iconSize="13dp"
+            app:iconTint="@color/voicekb_keyboard_language_icon" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

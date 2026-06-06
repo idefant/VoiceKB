@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/language_selection_scrim"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/language_selection_panel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_keyboard_panel"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="18dp"
+            android:tag="panel_surface">
+
+            <FrameLayout
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:background="@drawable/bg_keyboard_panel_icon"
+                android:tag="panel_icon_container">
+
+                <ImageView
+                    android:layout_width="19dp"
+                    android:layout_height="19dp"
+                    android:layout_gravity="center"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_lucide_languages_24"
+                    android:tag="panel_accent_icon" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:tag="panel_title"
+                    android:text="@string/app_name"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:tag="panel_muted"
+                    android:text="@string/voicekb_language_selection"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View style="@style/KeyboardPanelDivider" />
+
+        <LinearLayout
+            android:id="@+id/language_selection_options"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+
+        <View style="@style/KeyboardPanelDivider" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:gravity="center_vertical|end"
+            android:orientation="horizontal"
+            android:paddingHorizontal="16dp"
+            android:tag="panel_surface">
+
+            <TextView
+                android:id="@+id/language_selection_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:foreground="?attr/selectableItemBackground"
+                android:gravity="center"
+                android:paddingHorizontal="10dp"
+                android:tag="panel_accent"
+                android:text="@string/voicekb_cancel"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

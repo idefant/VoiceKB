@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.preference.PreferenceCategory
+        android:title="@string/voicekb_smart_insertion_title"
+        app:iconSpaceReserved="false">
+
+        <androidx.preference.Preference
+            android:selectable="false"
+            android:summary="@string/voicekb_smart_insertion_description"
+            app:iconSpaceReserved="false" />
+
+        <androidx.preference.Preference
+            android:selectable="false"
+            android:summary="@string/voicekb_smart_insertion_sentence_summary"
+            app:iconSpaceReserved="false" />
+
+        <androidx.preference.SwitchPreference
+            android:key="com.idefant.voicekb.smart_insertion_preserve_abbreviations"
+            android:title="@string/voicekb_smart_insertion_preserve_abbreviations_title"
+            android:summary="@string/voicekb_smart_insertion_preserve_abbreviations_summary"
+            android:defaultValue="true"
+            app:iconSpaceReserved="false" />
+
+        <androidx.preference.SwitchPreference
+            android:key="com.idefant.voicekb.smart_insertion_capitalize_after_sentence"
+            android:title="@string/voicekb_smart_insertion_capitalize_after_sentence_title"
+            android:summary="@string/voicekb_smart_insertion_capitalize_after_sentence_summary"
+            android:defaultValue="true"
+            app:iconSpaceReserved="false" />
+
+        <androidx.preference.SwitchPreference
+            android:key="com.idefant.voicekb.smart_insertion_lowercase_unfinished_sentence"
+            android:title="@string/voicekb_smart_insertion_lowercase_unfinished_title"
+            android:summary="@string/voicekb_smart_insertion_lowercase_unfinished_summary"
+            android:defaultValue="false"
+            app:iconSpaceReserved="false" />
+
+        <androidx.preference.SwitchPreference
+            android:key="com.idefant.voicekb.smart_insertion_capitalize_markdown_list"
+            android:title="@string/voicekb_smart_insertion_markdown_list_title"
+            android:summary="@string/voicekb_smart_insertion_markdown_list_summary"
+            android:defaultValue="false"
+            app:iconSpaceReserved="false" />
+
+        <androidx.preference.SwitchPreference
+            android:key="com.idefant.voicekb.smart_insertion_capitalize_quote"
+            android:title="@string/voicekb_smart_insertion_quote_title"
+            android:summary="@string/voicekb_smart_insertion_quote_summary"
+            android:defaultValue="false"
+            app:iconSpaceReserved="false" />
+
+        <androidx.preference.EditTextPreference
+            android:key="com.idefant.voicekb.smart_insertion_blacklist"
+            android:title="@string/voicekb_smart_insertion_blacklist_title"
+            android:summary="@string/voicekb_smart_insertion_blacklist_summary"
+            android:defaultValue="I"
+            android:dialogTitle="@string/voicekb_smart_insertion_blacklist_title"
+            app:positiveButtonText="@string/voicekb_okay"
+            app:negativeButtonText="@string/voicekb_cancel"
+            app:iconSpaceReserved="false" />
+    </androidx.preference.PreferenceCategory>
+</androidx.preference.PreferenceScreen>

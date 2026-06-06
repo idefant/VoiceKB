@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--    Material 400-->
+    <color name="voicekb_blue">#29B6F6</color>
+
+    <!--    Material 600-->
+    <color name="voicekb_blue_dark">#1C7EAB</color>
+
+    <color name="voicekb_white">#ffffff</color>
+    <color name="voicekb_black">#000000</color>
+    <color name="voicekb_grey">#A8A8A8</color>
+    <color name="voicekb_red">#E53935</color>
+    <color name="voicekb_green">#43A047</color>
+
+    <color name="voicekb_keyboard_background_dark">#1b1b1d</color>
+    <color name="voicekb_keyboard_background_light">#f1f1f1</color>
+
+    <color name="voicekb_keyboard_primary">#4A9FD8</color>
+    <color name="voicekb_keyboard_primary_pressed">#3476A2</color>
+    <color name="voicekb_keyboard_recording">#E5484D</color>
+    <color name="voicekb_keyboard_surface_light">#EEF0F2</color>
+    <color name="voicekb_keyboard_surface_dark">#202329</color>
+    <color name="voicekb_keyboard_header_light">#FFFFFF</color>
+    <color name="voicekb_keyboard_header_dark">#17191E</color>
+    <color name="voicekb_keyboard_language_light">#EEF4FA</color>
+    <color name="voicekb_keyboard_language_dark">#2B2F36</color>
+    <color name="voicekb_keyboard_language_icon">#5792B8</color>
+    <color name="voicekb_keyboard_language_icon_dark">#72BFEA</color>
+    <color name="voicekb_keyboard_icon_light">#666666</color>
+    <color name="voicekb_keyboard_icon_dark">#C6CDD7</color>
+    <color name="voicekb_keyboard_header_icon_dark">#B9C0CA</color>
+    <color name="voicekb_keyboard_button_light">#FFFFFF</color>
+    <color name="voicekb_keyboard_button_dark">#2B2F36</color>
+    <color name="voicekb_keyboard_enter_light">#DDEAF4</color>
+    <color name="voicekb_keyboard_enter_dark">#1D3A4B</color>
+    <color name="voicekb_keyboard_danger_container_light">#FDECEC</color>
+    <color name="voicekb_keyboard_danger_container_dark">#3A2326</color>
+    <color name="voicekb_keyboard_danger_icon_light">#D64545</color>
+    <color name="voicekb_keyboard_danger_icon_dark">#FF7378</color>
+    <color name="voicekb_keyboard_text_light">#1A1A1A</color>
+    <color name="voicekb_keyboard_text_dark">#F4F6F8</color>
+    <color name="voicekb_keyboard_muted_text_light">#888888</color>
+    <color name="voicekb_keyboard_muted_text_dark">#A6AFBC</color>
+    <color name="voicekb_keyboard_scrim">#99000000</color>
+    <color name="voicekb_keyboard_panel_scrim">#B3000000</color>
+    <color name="voicekb_keyboard_panel_light">#FFFFFF</color>
+    <color name="voicekb_keyboard_panel_dark">#1D2026</color>
+    <color name="voicekb_keyboard_panel_title_light">#273142</color>
+    <color name="voicekb_keyboard_panel_title_dark">#E7EBF0</color>
+    <color name="voicekb_keyboard_panel_text_light">#273142</color>
+    <color name="voicekb_keyboard_panel_text_dark">#E7EBF0</color>
+    <color name="voicekb_keyboard_panel_icon_light">#667085</color>
+    <color name="voicekb_keyboard_panel_icon_dark">#B8C0CB</color>
+    <color name="voicekb_keyboard_panel_chevron_light">#98A2B3</color>
+    <color name="voicekb_keyboard_panel_chevron_dark">#87919E</color>
+    <color name="voicekb_keyboard_panel_selected_light">#F5F9FD</color>
+    <color name="voicekb_keyboard_panel_selected_dark">#242C33</color>
+    <color name="voicekb_keyboard_panel_radio_light">#A8B2BE</color>
+    <color name="voicekb_keyboard_panel_radio_dark">#737D8A</color>
+    <color name="voicekb_keyboard_tray_text_light">#52606F</color>
+    <color name="voicekb_keyboard_tray_dark">#24282F</color>
+    <color name="voicekb_keyboard_tray_text_dark">#C8D0DA</color>
+    <color name="voicekb_keyboard_tray_divider_dark">#3A4049</color>
+    <color name="voicekb_keyboard_divider_light">#E2E8F0</color>
+    <color name="voicekb_keyboard_divider_dark">#30343B</color>
+</resources>

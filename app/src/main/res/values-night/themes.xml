@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.VoiceKB" parent="Theme.Material3.Dark">
+        <item name="fontFamily">@font/inter</item>
+        <item name="android:fontFamily">@font/inter</item>
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/voicekb_blue</item>
+        <item name="colorPrimaryVariant">@color/voicekb_blue</item>
+        <item name="colorOnPrimary">@color/voicekb_black</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/voicekb_blue</item>
+        <item name="colorSecondaryVariant">@color/voicekb_blue</item>
+        <item name="colorOnSecondary">@color/voicekb_black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" >?attr/colorPrimaryVariant</item>
+
+        <!-- Customize your theme here. -->
+
+    </style>
+
+    <style name="Theme.VoiceKB.VoiceRecognitionDialog" parent="Theme.Material3.Dark.Dialog">
+        <item name="fontFamily">@font/inter</item>
+        <item name="android:fontFamily">@font/inter</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:backgroundDimAmount">0.72</item>
+    </style>
+
+    <style name="roundedImageView" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">18dp</item>
+    </style>
+
+    <style name="KeyboardPanelDivider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">@color/voicekb_keyboard_divider_dark</item>
+    </style>
+
+    <style name="KeyboardPanelRow">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:foreground">?attr/selectableItemBackground</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingHorizontal">16dp</item>
+        <item name="android:textColor">@color/voicekb_keyboard_text_dark</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="KeyboardPanelRowContainer">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:foreground">?attr/selectableItemBackground</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:paddingHorizontal">16dp</item>
+    </style>
+
+    <style name="KeyboardPanelRowIcon">
+        <item name="android:layout_width">24dp</item>
+        <item name="android:layout_height">24dp</item>
+    </style>
+
+    <style name="KeyboardPanelRowText">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:textColor">@color/voicekb_keyboard_text_dark</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+</resources>
