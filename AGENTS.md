@@ -47,7 +47,7 @@ Use the Android emulator for UI work. The expected local test setup is:
 - Text editor: Markor
 - Markor tab: `QuickNote`
 - Normal default IME: AnySoftKeyboard
-- VoiceKB IME: `com.idefant.voicekb/.core.VoiceKBInputMethodService`
+- VoiceKB debug IME: `com.idefant.voicekb.debug/com.idefant.voicekb.core.VoiceKBInputMethodService`
 
 After UI testing, restore AnySoftKeyboard as the default IME unless the next
 test immediately requires VoiceKB.

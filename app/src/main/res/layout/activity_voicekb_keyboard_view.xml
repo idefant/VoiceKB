@@ -88,6 +88,24 @@
             app:layout_constraintStart_toEndOf="@id/voicekb_status_dot"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <TextView
+            android:id="@+id/debug_badge"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/bg_debug_badge"
+            android:gravity="center"
+            android:paddingHorizontal="7dp"
+            android:text="DEV"
+            android:textColor="@color/voicekb_white"
+            android:textSize="9sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/voicekb_title"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible" />
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/language_btn"
             style="@style/Widget.Material3.Button.TextButton"
@@ -114,7 +132,7 @@
             app:iconSize="14dp"
             app:iconTint="@color/voicekb_keyboard_language_icon"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@id/voicekb_title"
+            app:layout_constraintStart_toEndOf="@id/debug_badge"
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.button.MaterialButton

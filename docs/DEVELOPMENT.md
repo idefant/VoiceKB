@@ -14,7 +14,8 @@ Expected emulator apps:
 
 - Markor: `net.gsantner.markor`
 - AnySoftKeyboard: `com.menny.android.anysoftkeyboard/.SoftKeyboard`
-- VoiceKB: `com.idefant.voicekb`
+- VoiceKB release: `com.idefant.voicekb`
+- VoiceKB debug: `com.idefant.voicekb.debug`
 
 ## Build
 
@@ -74,14 +75,14 @@ $adb = "$env:LOCALAPPDATA\Android\Sdk\platform-tools\adb.exe"
 & $adb -s emulator-5554 install -r `
   'app\build\outputs\apk\debug\app-debug.apk'
 & $adb -s emulator-5554 shell ime enable `
-  com.idefant.voicekb/.core.VoiceKBInputMethodService
+  com.idefant.voicekb.debug/com.idefant.voicekb.core.VoiceKBInputMethodService
 ```
 
 Switch to VoiceKB:
 
 ```powershell
 & $adb -s emulator-5554 shell ime set `
-  com.idefant.voicekb/.core.VoiceKBInputMethodService
+  com.idefant.voicekb.debug/com.idefant.voicekb.core.VoiceKBInputMethodService
 ```
 
 Restore the normal keyboard after testing:

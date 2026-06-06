@@ -12,6 +12,10 @@ android {
         targetSdk 35
         versionCode 1
         versionName "0.1.0"
+        manifestPlaceholders = [
+                appLabel: "VoiceKB",
+                imeLabel: "VoiceKB"
+        ]
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -35,6 +39,14 @@ android {
     }
 
     buildTypes {
+        debug {
+            applicationIdSuffix ".debug"
+            versionNameSuffix "-debug"
+            manifestPlaceholders = [
+                    appLabel: "VoiceKB Debug",
+                    imeLabel: "VoiceKB Debug"
+            ]
+        }
         release {
             signingConfig signingConfigs.release
             minifyEnabled false

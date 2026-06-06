@@ -4,6 +4,7 @@ import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.BroadcastReceiver;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -67,6 +68,7 @@ import com.openai.models.audio.AudioResponseFormat;
 import com.openai.models.audio.transcriptions.Transcription;
 import com.openai.models.audio.transcriptions.TranscriptionCreateParams;
 
+import com.idefant.voicekb.BuildConfig;
 import com.idefant.voicekb.VoiceKBUtils;
 import com.idefant.voicekb.R;
 import com.idefant.voicekb.settings.VoiceKBSettingsActivity;
@@ -190,6 +192,7 @@ public class VoiceKBInputMethodService extends InputMethodService {
     private ImageView recordBluetoothBadge;
     private ProgressBar recordProgress;
     private TextView recordTimer;
+    private TextView debugBadge;
     private View keyboardHeader;
     private View specialCharactersScrim;
     private ConstraintLayout infoCl;
@@ -247,6 +250,8 @@ public class VoiceKBInputMethodService extends InputMethodService {
         recordBluetoothBadge = voicekbKeyboardView.findViewById(R.id.record_bluetooth_badge);
         recordProgress = voicekbKeyboardView.findViewById(R.id.record_progress);
         recordTimer = voicekbKeyboardView.findViewById(R.id.record_timer);
+        debugBadge = voicekbKeyboardView.findViewById(R.id.debug_badge);
+        debugBadge.setVisibility(BuildConfig.DEBUG ? View.VISIBLE : View.GONE);
         keyboardHeader = voicekbKeyboardView.findViewById(R.id.keyboard_header);
         specialCharactersScrim = voicekbKeyboardView.findViewById(R.id.special_characters_scrim);
 
@@ -790,7 +795,10 @@ public class VoiceKBInputMethodService extends InputMethodService {
 
     private boolean isVoiceKBSelectedInputMethod() {
         String currentInputMethod = Settings.Secure.getString(getContentResolver(), Settings.Secure.DEFAULT_INPUT_METHOD);
-        return TextUtils.equals(currentInputMethod, getPackageName() + "/.core.VoiceKBInputMethodService");
+        ComponentName componentName = ComponentName.unflattenFromString(currentInputMethod);
+        return componentName != null
+                && TextUtils.equals(componentName.getPackageName(), getPackageName())
+                && TextUtils.equals(componentName.getClassName(), VoiceKBInputMethodService.class.getName());
     }
 
     private void vibrate() {
