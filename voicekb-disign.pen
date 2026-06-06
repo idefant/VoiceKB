@@ -9,7 +9,7 @@
       "name": "VoiceKB Keyboard Concept",
       "clip": true,
       "width": 412,
-      "height": 241,
+      "height": 240,
       "fill": "#EEF0F2",
       "layout": "none",
       "children": [
@@ -21,7 +21,7 @@
           "x": 0,
           "y": 0,
           "width": 412,
-          "height": 241
+          "height": 240
         }
       ]
     },
@@ -51,7 +51,7 @@
           "ref": "Cak9r",
           "name": "IME Instance / Recording",
           "x": 0,
-          "y": 642,
+          "y": 643,
           "descendants": {
             "rAkk5": {
               "fill": "#EEF4FA"
@@ -908,7 +908,7 @@
           "ref": "Cak9r",
           "name": "IME Instance / Idle",
           "x": 0,
-          "y": 642
+          "y": 643
         }
       ]
     },
@@ -938,7 +938,7 @@
           "ref": "Cak9r",
           "name": "IME Instance / Paused",
           "x": 0,
-          "y": 642,
+          "y": 643,
           "descendants": {
             "rAkk5": {
               "fill": "#EEF4FA"
@@ -1002,7 +1002,7 @@
           "ref": "Cak9r",
           "name": "IME Instance / Sending",
           "x": 0,
-          "y": 642,
+          "y": 643,
           "descendants": {
             "rAkk5": {
               "fill": "#EEF4FA"
@@ -1221,7 +1221,7 @@
           "ref": "OVWdA",
           "name": "Dark IME Instance",
           "x": 0,
-          "y": 642,
+          "y": 643,
           "descendants": {
             "fhy7N/rAkk5": {
               "fill": "#2B2F36"
@@ -1292,7 +1292,7 @@
           "ref": "OVWdA",
           "name": "Dark IME Instance",
           "x": 0,
-          "y": 642
+          "y": 643
         }
       ]
     },
@@ -1322,7 +1322,7 @@
           "ref": "OVWdA",
           "name": "Dark IME Instance",
           "x": 0,
-          "y": 642,
+          "y": 643,
           "descendants": {
             "fhy7N/rAkk5": {
               "fill": "#2B2F36"
@@ -1383,7 +1383,7 @@
           "ref": "OVWdA",
           "name": "Dark IME Instance",
           "x": 0,
-          "y": 642,
+          "y": 643,
           "descendants": {
             "fhy7N/rAkk5": {
               "fill": "#2B2F36"
@@ -1446,7 +1446,7 @@
           "ref": "Cak9r",
           "name": "Quick Settings IME Idle",
           "x": 0,
-          "y": 642
+          "y": 643
         },
         {
           "type": "rectangle",
@@ -1821,7 +1821,7 @@
           "ref": "OVWdA",
           "name": "Quick Settings IME Idle / Dark",
           "x": 0,
-          "y": 642
+          "y": 643
         },
         {
           "type": "rectangle",
@@ -2196,7 +2196,7 @@
           "ref": "Cak9r",
           "name": "State / Language Selection / Light IME",
           "x": 0,
-          "y": 642
+          "y": 643
         },
         {
           "type": "rectangle",
@@ -2574,7 +2574,7 @@
           "ref": "OVWdA",
           "name": "State / Language Selection / Dark IME",
           "x": 0,
-          "y": 642
+          "y": 643
         },
         {
           "type": "rectangle",
@@ -4224,17 +4224,17 @@
           "ref": "Cak9r",
           "name": "Enter Long Press IME",
           "x": 0,
-          "y": 642
+          "y": 643
         },
         {
           "type": "rectangle",
           "id": "c1FI3",
           "x": 0,
-          "y": 642,
+          "y": 643,
           "name": "Enter Long Press Keyboard Dim",
           "fill": "#10182077",
           "width": 412,
-          "height": 241
+          "height": 240
         },
         {
           "type": "frame",
@@ -4490,7 +4490,7 @@
           "ref": "OVWdA",
           "name": "Enter Long Press IME / Dark",
           "x": 0,
-          "y": 642,
+          "y": 643,
           "descendants": {
             "fhy7N/r0ZMd": {
               "fill": "#28556C"
@@ -4504,11 +4504,11 @@
           "type": "rectangle",
           "id": "DbOTK",
           "x": 0,
-          "y": 642,
+          "y": 643,
           "name": "Enter Long Press Keyboard Dim / Dark",
           "fill": "#00000088",
           "width": 412,
-          "height": 241
+          "height": 240
         },
         {
           "type": "frame",
@@ -5744,7 +5744,7 @@
           "ref": "Cak9r",
           "name": "IME Instance / Idle",
           "x": 0,
-          "y": 642,
+          "y": 643,
           "descendants": {
             "ks3V6": {
               "opacity": 0
@@ -5779,7 +5779,7 @@
           "ref": "OVWdA",
           "name": "Dark IME Instance",
           "x": 0,
-          "y": 642,
+          "y": 643,
           "descendants": {
             "fhy7N/ks3V6": {
               "opacity": 0
