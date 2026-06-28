@@ -33,6 +33,9 @@ Debug APK:
 app\build\outputs\apk\debug\app-debug.apk
 ```
 
+For public alpha, beta, and stable releases, read `docs/RELEASE.md` before
+changing `versionCode`, `versionName`, tags, or changelog entries.
+
 ## Start The Emulator
 
 The emulator writes lock files under `%USERPROFILE%\.android\avd`. When Codex
