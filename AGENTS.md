@@ -1,83 +1,38 @@
-# VoiceKB Development Notes
+# Заметки по разработке VoiceKB
 
-Read these notes before making changes. More detail lives in:
+Этот файл — всегда находящийся в контексте роутер. Он не дублирует детали, а указывает на документацию, которая ими владеет. Перед работой читай соответствующий раздел.
 
-- `docs/PRODUCT_DIRECTION.md`
-- `docs/DEVELOPMENT.md`
-- `docs/KEYBOARD_BEHAVIOR.md`
+## О проекте
 
-## Project Shape
+VoiceKB — Android-клавиатура голосового ввода. Сохраняем существующий стек: Java, Android XML-разметки и drawable, Gradle wrapper из репозитория. Не переводим UI на Compose и не вводим новый UI-фреймворк без явной просьбы пользователя.
 
-VoiceKB is an Android voice-input keyboard. Keep the existing stack:
+Основной сервис клавиатуры: `app/src/main/java/com/idefant/voicekb/core/VoiceKBInputMethodService.java`. Источник истины по визуалу клавиатуры — `voicekb-disign.pen`.
 
-- Java
-- Android XML layouts and drawables
-- Gradle wrapper from this repository
+## Система документации
 
-Do not migrate the UI to Compose or add a new UI framework unless the user
-explicitly requests it.
+Документация — источник истины о поведении и о принятых решениях. Начинай с индекса и реестров:
 
-The main keyboard service is:
+- `docs/README.md` — индекс, слои документации и обязательный протокол (см. ниже).
+- `docs/functional-spec/` — контракт пользовательского поведения (реестр: `docs/functional-spec/README.md`).
+- `docs/development/` — почему приняты нетривиальные решения (реестр: `docs/development/README.md`).
+- `docs/development-guidelines.md` — как здесь писать код: стек, команды, среда, конвенции, релизы, проверки.
 
-- `app/src/main/java/com/idefant/voicekb/core/VoiceKBInputMethodService.java`
+## Обязательный протокол
 
-Keyboard lifecycle and behavior rules are documented in:
+1. ПЕРЕД работой над функционалом прочитай соответствующий раздел ФС и связанный с ним док разработки.
+2. Если изменение ЛОМАЕТ задокументированное поведение — ОСТАНОВИСЬ, предупреди пользователя и спроси, действительно ли это нужно. Не меняй задокументированное поведение молча.
+3. ПОСЛЕ изменения приведи ФС в соответствие новому поведению; для сложных решений обнови или добавь док разработки (почему / следствия / слабые места).
+4. Если код УЖЕ расходится с документацией — опиши расхождение словами (не кодом) и предложи исправить документацию.
 
-- `docs/KEYBOARD_BEHAVIOR.md`
+## Куда смотреть
 
-The current Pencil design reference is:
+- Состояния записи, мгновенная запись, возврат к предыдущей клавиатуре, быстрые настройки и выбор языка: `docs/functional-spec/voice-session.md` + `docs/development/ime-session-lifecycle.md`.
+- Транскрипция файла и повторная отправка аудио: `docs/functional-spec/file-transcription-resend.md`.
+- Коррекция регистра первой буквы и ведущего пробела при вставке: `docs/functional-spec/smart-insertion.md` + `docs/development/smart-insertion.md`.
+- Спецсимволы по долгому нажатию Enter: `docs/functional-spec/special-characters.md` + `docs/development/special-characters-tray.md`.
+- Голосовой ввод по запросу приложения (например, поиск в браузере): `docs/functional-spec/browser-voice-input.md`.
+- Сборка, эмулятор, ручные сценарии, релизы: `docs/development-guidelines.md`.
 
-- `voicekb-disign.pen`
+## Состояние машины пользователя
 
-## Current Direction
-
-The old keyboard design is being replaced incrementally with the new Pencil
-design. Preserve existing features unless the user explicitly asks to remove
-one.
-
-The current priority is the keyboard itself: layout, states, colors, touch
-behavior, IME lifecycle, and emulator verification. Settings screens and
-secondary panels should be changed only when the task requires them.
-
-## Testing Expectations
-
-Use the Android emulator for UI work. The expected local test setup is:
-
-- AVD: `Medium_Phone_API_36.0`
-- Text editor: Markor
-- Markor tab: `QuickNote`
-- Normal default IME: AnySoftKeyboard
-- VoiceKB debug IME: `com.idefant.voicekb.debug/com.idefant.voicekb.core.VoiceKBInputMethodService`
-
-After UI testing, restore AnySoftKeyboard as the default IME unless the next
-test immediately requires VoiceKB.
-
-Run at least:
-
-```powershell
-.\gradlew.bat assembleDebug
-.\gradlew.bat lintDebug
-git diff --check
-```
-
-For emulator commands, screenshots, installation, and manual scenarios, read
-`docs/DEVELOPMENT.md`.
-
-## Interaction Rules
-
-- Do not remove existing behavior without an explicit request.
-- Before changing IME lifecycle, temporary mode, instant recording, quick
-  settings, language selection, file transcription, resend, or keyboard
-  switching, read and update `docs/KEYBOARD_BEHAVIOR.md`.
-- Keep button geometry stable during presses and state changes.
-- Quick settings and language selection are attached dialogs above the IME.
-  Closing them must not hide the keyboard.
-- When the return-to-previous-keyboard preference is disabled, VoiceKB should
-  remain visible after inserting text.
-- Verify light and dark themes when changing keyboard colors or drawables.
-- Treat `voicekb-disign.pen` as the source of truth for keyboard visuals.
-
-## Machine-Specific State
-
-Codex command approvals, Appium MCP configuration, Android SDK paths, and local
-AVD files are user-machine state. Do not commit them to the repository.
+Одобрения команд Codex, конфигурация Appium MCP, пути к Android SDK и локальные файлы AVD — это состояние машины пользователя. Не коммитить в репозиторий.
