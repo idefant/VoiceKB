@@ -52,6 +52,12 @@
             android:defaultValue="false"
             app:iconSpaceReserved="false"/>
 
+        <androidx.preference.ListPreference
+            android:key="com.idefant.voicekb.return_keyboard"
+            android:title="@string/voicekb_settings_return_keyboard_title"
+            android:defaultValue="auto"
+            app:iconSpaceReserved="false"/>
+
         <androidx.preference.SwitchPreference
             android:key="com.idefant.voicekb.file_upload_enabled"
             android:title="@string/voicekb_settings_file_upload_title"

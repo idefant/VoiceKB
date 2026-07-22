@@ -88,6 +88,10 @@
     <string name="voicekb_onboarding_complete_dialog_message">Du kannst jederzeit zwischen deiner normalen Tastatur und VoiceKB wechseln. Klicke einfach auf das Symbol für die Tastatur unter deiner Standardtastatur und wähle VoiceKB aus.\n\nWenn du das volle Potenzial von VoiceKB ausschöpfen willst, geh zu den Einstellungen und sieh dir die Anleitung für die App im Detail an.\n\nVoiceKB sendet keine deiner transkribierten Audios/Texte irgendwohin (außer an OpenAI für die Transkription natürlich). Da der Entwickler den Datenschutz sehr schätzt, erhält er keine Informationen darüber, was du aufnimmst. Wenn du diesen Worten nicht traust, kannst du gerne einen Blick in den Quellcode werfen, zu dem du einen Link in den Einstellungen findest.\n\nViel Spaß 💪</string>
     <string name="voicekb_settings_instant_recording_title">Sofortige Aufnahme 🎙️</string>
     <string name="voicekb_settings_instant_recording_summary">Aufnahme mit dem Wechseln zur VoiceKB-Tastatur starten</string>
+    <string name="voicekb_settings_return_keyboard_title">Tastatur für die Rückkehr</string>
+    <string name="voicekb_settings_return_keyboard_auto">Automatisch</string>
+    <string name="voicekb_settings_return_keyboard_summary_auto">Automatisch: die zuletzt vom System gemerkte Tastatur</string>
+    <string name="voicekb_settings_return_keyboard_summary_fixed">Immer zu %1$s wechseln</string>
     <string name="voicekb_settings_api_title">API Einstellungen</string>
     <string name="voicekb_settings_about_title">Über</string>
     <string name="voicekb_settings_usage">Verbrauch einsehen 📊</string>

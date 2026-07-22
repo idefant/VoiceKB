@@ -1,12 +1,16 @@
 package com.idefant.voicekb.settings;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.InputFilter;
 import android.text.InputType;
 import android.text.TextUtils;
+import android.view.inputmethod.InputMethodInfo;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
 
 import androidx.preference.EditTextPreference;
@@ -21,11 +25,14 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.idefant.voicekb.BuildConfig;
 import com.idefant.voicekb.VoiceKBUtils;
 import com.idefant.voicekb.R;
+import com.idefant.voicekb.core.VoiceKBInputMethodService;
 import com.idefant.voicekb.usage.UsageActivity;
 import com.idefant.voicekb.usage.UsageDatabaseHelper;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -206,5 +213,48 @@ public class PreferencesFragment extends PreferenceFragmentCompat {
         if (aboutPreference != null) {
             aboutPreference.setTitle(getString(R.string.voicekb_about, BuildConfig.VERSION_NAME));
         }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        // rebuilt on every resume: the user can enable or remove keyboards in the system
+        // settings and come back without this screen being recreated
+        populateReturnKeyboardPreference();
+    }
+
+    private void populateReturnKeyboardPreference() {
+        ListPreference returnKeyboardPreference = findPreference("com.idefant.voicekb.return_keyboard");
+        if (returnKeyboardPreference == null) return;
+
+        InputMethodManager imm = (InputMethodManager) requireContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+        PackageManager packageManager = requireContext().getPackageManager();
+
+        List<CharSequence> entries = new ArrayList<>();
+        List<CharSequence> values = new ArrayList<>();
+        entries.add(getString(R.string.voicekb_settings_return_keyboard_auto));
+        values.add(VoiceKBInputMethodService.RETURN_KEYBOARD_AUTO);
+
+        for (InputMethodInfo inputMethod : imm.getEnabledInputMethodList()) {
+            if (inputMethod.getPackageName().equals(requireContext().getPackageName())) continue;
+            entries.add(inputMethod.loadLabel(packageManager));
+            values.add(inputMethod.getId());
+        }
+
+        returnKeyboardPreference.setEntries(entries.toArray(new CharSequence[0]));
+        returnKeyboardPreference.setEntryValues(values.toArray(new CharSequence[0]));
+
+        // the selected keyboard could have been uninstalled or disabled since the last visit
+        if (returnKeyboardPreference.findIndexOfValue(returnKeyboardPreference.getValue()) < 0) {
+            returnKeyboardPreference.setValue(VoiceKBInputMethodService.RETURN_KEYBOARD_AUTO);
+        }
+
+        returnKeyboardPreference.setSummaryProvider((Preference.SummaryProvider<ListPreference>) preference -> {
+            CharSequence entry = preference.getEntry();
+            if (entry == null || VoiceKBInputMethodService.RETURN_KEYBOARD_AUTO.equals(preference.getValue())) {
+                return getString(R.string.voicekb_settings_return_keyboard_summary_auto);
+            }
+            return getString(R.string.voicekb_settings_return_keyboard_summary_fixed, entry);
+        });
     }
 }

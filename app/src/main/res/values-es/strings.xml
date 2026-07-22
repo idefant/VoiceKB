@@ -89,6 +89,10 @@
     <string name="voicekb_onboarding_complete_dialog_message">Puedes alternar entre tu teclado habitual y VoiceKB en cualquier momento. Basta con pulsar el icono de estado del teclado bajo tu teclado habitual y seleccionar VoiceKB.\n\nSi quieres conocer todo el potencial de VoiceKB, ve a los ajustes y abre la página de instrucciones para ver una guía detallada de la app.\n\nVoiceKB no envía ninguno de tus audios/textos transcritos a ningún sitio (salvo a OpenAI para la transcripción, claro). Como el desarrollador valora la protección de datos, no recibe ninguna información sobre lo que grabas. Si no confías en estas palabras, puedes consultar el código fuente, al que encontrarás un enlace en los ajustes.\n\n¡Diviértete! 💪</string>
     <string name="voicekb_settings_instant_recording_title">Grabación instantánea 🎙️</string>
     <string name="voicekb_settings_instant_recording_summary">Comenzar a grabar nada más cambiar al teclado VoiceKB</string>
+    <string name="voicekb_settings_return_keyboard_title">Teclado al que volver</string>
+    <string name="voicekb_settings_return_keyboard_auto">Automático</string>
+    <string name="voicekb_settings_return_keyboard_summary_auto">Automático: el último teclado que recuerda el sistema</string>
+    <string name="voicekb_settings_return_keyboard_summary_fixed">Cambiar siempre a %1$s</string>
     <string name="voicekb_settings_api_title">Ajustes de API</string>
     <string name="voicekb_settings_about_title">Acerca de</string>
     <string name="voicekb_detect_automatically">Detectar</string>

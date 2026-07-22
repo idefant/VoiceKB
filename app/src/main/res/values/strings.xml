@@ -95,6 +95,10 @@
     <string name="voicekb_onboarding_complete_dialog_message">You can switch between your normal keyboard and VoiceKB at any time. Simply click on the keyboard status icon below your standard keyboard and select VoiceKB.\n\nIf you want to know the full potential of VoiceKB, go to the settings and check out the How-To page for detailed app instructions.\n\nVoiceKB does not send any of your transcribed audios/texts anywhere (except to OpenAI for transcription of course). Since the developer values data protection, he does not receive any information about what you are recording. If you don\'t trust these words, feel free to look into the source code, to which you will find a link in the settings.\n\nHave fun with it 💪</string>
     <string name="voicekb_settings_instant_recording_title">Instant recording 🎙️</string>
     <string name="voicekb_settings_instant_recording_summary">Start recording as soon as you switch to VoiceKB keyboard</string>
+    <string name="voicekb_settings_return_keyboard_title">Keyboard to return to</string>
+    <string name="voicekb_settings_return_keyboard_auto">Auto</string>
+    <string name="voicekb_settings_return_keyboard_summary_auto">Auto: the last keyboard the system remembers</string>
+    <string name="voicekb_settings_return_keyboard_summary_fixed">Always switch to %1$s</string>
     <string name="voicekb_settings_api_title">API settings</string>
     <string name="voicekb_settings_about_title">About</string>
     <string name="voicekb_custom_host_hint" translatable="false">https://api.example.com/</string>

@@ -45,6 +45,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.ExtractedText;
+import android.view.inputmethod.InputMethodInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.view.inputmethod.ExtractedTextRequest;
 import android.view.inputmethod.InputConnection;
@@ -97,6 +98,8 @@ public class VoiceKBInputMethodService extends InputMethodService {
     private static final int DELETE_LOOKBACK_CHARACTERS = 64;
     private static final String PREF_RESEND_FILE_NAME = "com.idefant.voicekb.resend_file_name";
     private static final String PREF_RETURN_TO_PREVIOUS_KEYBOARD = "com.idefant.voicekb.return_to_previous_keyboard";
+    private static final String PREF_RETURN_KEYBOARD = "com.idefant.voicekb.return_keyboard";
+    public static final String RETURN_KEYBOARD_AUTO = "auto";
     private static final String PREF_QUICK_SETTINGS_BUTTON = "com.idefant.voicekb.quick_settings_button";
     private static final String PREF_SMART_PRESERVE_ABBREVIATIONS = "com.idefant.voicekb.smart_insertion_preserve_abbreviations";
     private static final String PREF_SMART_CAPITALIZE_AFTER_SENTENCE = "com.idefant.voicekb.smart_insertion_capitalize_after_sentence";
@@ -1772,14 +1775,22 @@ public class VoiceKBInputMethodService extends InputMethodService {
         boolean success = false;
         switchingToPreviousKeyboard = true;
         instantRecordingConsumedForCurrentImeSelection = false;
-        try {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
-                success = switchToPreviousInputMethod();
-            } else {
-                InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-                success = imm.switchToLastInputMethod(getWindow().getWindow().getAttributes().token);
-            }
-        } catch (Exception ignored) {}
+
+        String configuredKeyboard = configuredReturnInputMethodId();
+        if (configuredKeyboard != null) {
+            success = switchToInputMethod(configuredKeyboard);
+        }
+
+        if (!success) {
+            try {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+                    success = switchToPreviousInputMethod();
+                } else {
+                    InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                    success = imm.switchToLastInputMethod(getWindow().getWindow().getAttributes().token);
+                }
+            } catch (Exception ignored) {}
+        }
 
         if (!success) {
             switchingToPreviousKeyboard = false;
@@ -1787,6 +1798,34 @@ public class VoiceKBInputMethodService extends InputMethodService {
                 InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
                 imm.showInputMethodPicker();
             }
+        }
+    }
+
+    // The keyboard picked in settings, or null when the user left it on "auto" or when that
+    // keyboard is no longer installed/enabled. A stale id must not block the switch, so an
+    // unresolved value silently degrades to whatever the system remembers.
+    private String configuredReturnInputMethodId() {
+        String configured = sp.getString(PREF_RETURN_KEYBOARD, RETURN_KEYBOARD_AUTO);
+        if (TextUtils.isEmpty(configured) || RETURN_KEYBOARD_AUTO.equals(configured)) return null;
+
+        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        for (InputMethodInfo inputMethod : imm.getEnabledInputMethodList()) {
+            if (inputMethod.getId().equals(configured)) return configured;
+        }
+        return null;
+    }
+
+    private boolean switchToInputMethod(String inputMethodId) {
+        try {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+                switchInputMethod(inputMethodId);
+            } else {
+                InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.setInputMethod(getWindow().getWindow().getAttributes().token, inputMethodId);
+            }
+            return true;
+        } catch (Exception ignored) {
+            return false;
         }
     }
 

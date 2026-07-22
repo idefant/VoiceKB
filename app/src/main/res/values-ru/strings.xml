@@ -193,6 +193,10 @@
     <string name="voicekb_settings_auto_enter_summary">Автоматически нажимать Enter/Отправить после каждой расшифровки.</string>
     <string name="voicekb_settings_enable_resend_button_summary">Показывать кнопку для повторной отправки предыдущей записи</string>
     <string name="voicekb_settings_instant_recording_summary">Начинать запись сразу после переключения на клавиатуру VoiceKB</string>
+    <string name="voicekb_settings_return_keyboard_title">Клавиатура для возврата</string>
+    <string name="voicekb_settings_return_keyboard_auto">Авто</string>
+    <string name="voicekb_settings_return_keyboard_summary_auto">Авто: последняя клавиатура, которую помнит система</string>
+    <string name="voicekb_settings_return_keyboard_summary_fixed">Всегда переключаться на %1$s</string>
     <string name="voicekb_settings_audio_focus_summary">Приостанавливать фоновые медиа во время записи</string>
     <string name="voicekb_settings_use_bluetooth_mic_summary">Предпочитать Bluetooth-микрофон, если он доступен</string>
     <string name="voicekb_settings_vibration_summary">Вибрация при нажатии кнопок и ошибках</string>
