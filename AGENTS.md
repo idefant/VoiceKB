@@ -27,6 +27,7 @@ VoiceKB — Android-клавиатура голосового ввода. Сох
 ## Куда смотреть
 
 - Состояния записи, мгновенная запись, возврат к предыдущей клавиатуре, быстрые настройки и выбор языка: `docs/functional-spec/voice-session.md` + `docs/development/ime-session-lifecycle.md`.
+- Клавиатура не появилась после переключения на VoiceKB (предыдущая скрылась, новая не показалась): `docs/development/ime-switch-show-race.md`.
 - Транскрипция файла и повторная отправка аудио: `docs/functional-spec/file-transcription-resend.md`.
 - Коррекция регистра первой буквы и ведущего пробела при вставке: `docs/functional-spec/smart-insertion.md` + `docs/development/smart-insertion.md`.
 - Спецсимволы по долгому нажатию Enter: `docs/functional-spec/special-characters.md` + `docs/development/special-characters-tray.md`.
