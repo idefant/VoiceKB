@@ -229,6 +229,7 @@ public class APISettingsActivity extends AppCompatActivity {
         form.additionalSwitch.setVisibility(customProvider ? View.GONE : View.VISIBLE);
         form.providerSummary.setText(providerSummary(provider));
         form.apiKeyEdit.setHint(apiKeyHint(provider));
+        form.additionalUrlEdit.setHint(additionalUrlHint(provider));
 
         if (provider == TranscriptionApiConfig.PROVIDER_OPENAI) {
             String model = sp.getString(pref(form, "transcription_openai_model"),
@@ -473,6 +474,19 @@ public class APISettingsActivity extends AppCompatActivity {
             return R.string.voicekb_custom_provider_summary;
         }
         return R.string.voicekb_groq_provider_summary;
+    }
+
+    private CharSequence additionalUrlHint(int provider) {
+        // For OpenAI and Groq the URL field overrides the provider default, so show that
+        // default as the placeholder. Custom has no default: keep the generic example.
+        if (provider == TranscriptionApiConfig.PROVIDER_OPENAI
+                || provider == TranscriptionApiConfig.PROVIDER_GROQ) {
+            String[] values = getResources().getStringArray(R.array.voicekb_api_providers_values);
+            if (provider >= 0 && provider < values.length) {
+                return values[provider];
+            }
+        }
+        return getString(R.string.voicekb_custom_server_host_hint);
     }
 
     private int apiKeyHint(int provider) {

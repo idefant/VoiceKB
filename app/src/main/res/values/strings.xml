@@ -63,14 +63,11 @@
     <string name="voicekb_microphone_permission_granted">Microphone permission granted ✅.</string>
     <string name="voicekb_microphone_permission_denied">Microphone permission denied ❌.</string>
     <string name="voicekb_record">Record</string>
-    <string name="voicekb_send">Send (%1$s)</string>
-    <string name="voicekb_sending">Sending …</string>
     <string name="voicekb_timeout_msg">Timeout exceeded while connecting to %1$s. Maybe the provider is overloaded or you have a poor internet connection.</string>
     <string name="voicekb_invalid_api_key_msg">Invalid API key. Open settings to correct it?</string>
     <string name="voicekb_quota_exceeded_msg">%1$s quota exceeded. Check your provider account or API settings.</string>
     <string name="voicekb_internet_error_msg">Couldn\'t connect to %1$s. Please check your internet connection.</string>
     <string name="voicekb_okay">Okay</string>
-    <string name="voicekb_settings_api_key_title">Change OpenAI API key 🔑</string>
     <string name="voicekb_settings_vibration_title">Enable Haptic feedback 📳</string>
     <string name="voicekb_settings_vibration_summary">Vibrate on button presses and errors</string>
     <string name="voicekb_about" translatable="false">VoiceKB v%1$s\nfrom Russia with hate</string>
@@ -86,7 +83,6 @@
     <string name="voicekb_onboarding_permissions_keyboard_button">Enable VoiceKB keyboard</string>
     <string name="voicekb_keyboard_disabled">VoiceKB keyboard disabled ❌.</string>
     <string name="voicekb_keyboard_enabled">VoiceKB keyboard enabled ✅.</string>
-    <string name="voicekb_api_key_hint" translatable="false">API key</string>
     <string name="voicekb_groq_api_key_hint" translatable="false">gsk_...</string>
     <string name="voicekb_openai_api_key_hint" translatable="false">sk-...</string>
     <string name="voicekb_custom_api_key_hint">API key</string>
@@ -101,13 +97,8 @@
     <string name="voicekb_settings_return_keyboard_summary_fixed">Always switch to %1$s</string>
     <string name="voicekb_settings_api_title">API settings</string>
     <string name="voicekb_settings_about_title">About</string>
-    <string name="voicekb_custom_host_hint" translatable="false">https://api.example.com/</string>
     <string name="voicekb_detect_automatically">Detect</string>
     <string name="voicekb_settings_prompts_title">Change transcription style prompt 💬</string>
-    <string name="voicekb_unsaved_changes_title">Discard changes?</string>
-    <string name="voicekb_unsaved_changes_message">You have unsaved changes. What would you like to do?</string>
-    <string name="voicekb_discard_changes">Discard</string>
-    <string name="voicekb_save">Save</string>
     <string name="voicekb_enable_keyboard_title">Enable VoiceKB keyboard?</string>
     <string name="voicekb_enable_keyboard_message">The VoiceKB keyboard isn\'t enabled in the system settings anymore. Do you want to open the system keyboard settings to correct this?</string>
     <string name="voicekb_default_overlay_characters" translatable="false">()-:!?,.</string>
@@ -115,12 +106,9 @@
     <string name="voicekb_overlay_characters_empty">You have to set at least one character.</string>
     <string name="voicekb_settings_auto_enter_title">Auto Enter after transcription ⏎</string>
     <string name="voicekb_settings_auto_enter_summary">Automatically press the Enter button after every transcription.</string>
-    <string name="voicekb_emoji_picker_title">Pick an emoji</string>
-    <string name="voicekb_number_pad_title">Number pad</string>
     <string name="voicekb_usage_cost" translatable="false">%1$.2f $</string>
     <string name="voicekb_usage_audio_time" translatable="false">%1$d min, %2$d s</string>
     <string name="voicekb_usage_no_usage">There is nothing to see here yet.\nStart transcription with VoiceKB\nto see the usage here.</string>
-    <string name="voicekb_usage_buy_new_credits">Buy new credits at openai.com</string>
     <string name="voicekb_usage_reset">Reset usage?</string>
     <string name="voicekb_usage">Usage</string>
     <string name="voicekb_usage_total_cost">Estimated total cost: %1$.2f $</string>
@@ -219,8 +207,6 @@
     <string name="voicekb_groq_provider_summary">Groq is fast and currently offers a free tier for speech transcription.</string>
     <string name="voicekb_openai_provider_summary">OpenAI uses official OpenAI transcription models and may require paid API credits.</string>
     <string name="voicekb_custom_provider_summary">Use an OpenAI-compatible endpoint, for example your own proxy server.</string>
-    <string name="set_your_custom_transcription_server_host">Set your custom transcription server host</string>
-    <string name="set_your_custom_transcription_model">Set your custom transcription model</string>
     <string name="voicekb_usage_model_provider_openai" translatable="false">OpenAI</string>
     <string name="voicekb_usage_model_provider_groq" translatable="false">Groq</string>
     <string name="voicekb_usage_model_provider_custom">Custom</string>
@@ -233,7 +219,6 @@
     <string name="voicekb_settings_accent_color_word">accent color</string>
     <string name="voicekb_settings_use_bluetooth_mic_title">Use Bluetooth microphone 🎧</string>
     <string name="voicekb_settings_use_bluetooth_mic_summary">Prefer Bluetooth microphone when available (headsets or car systems)</string>
-    <string name="voicekb_system_prompts">System Prompts</string>
     <string name="voicekb_transcription_style_prompt_title">Transcription style prompt</string>
     <string name="voicekb_transcription_style_prompt_nothing">No transcription style prompt</string>
     <string name="voicekb_transcription_style_prompt_punctuation_capitalization">Use punctuation and capitalization</string>
@@ -256,7 +241,6 @@
     <string name="voicekb_reset_recording">Reset recording</string>
     <string name="voicekb_settings_quick_settings_button_title">Show quick settings button</string>
     <string name="voicekb_settings_quick_settings_button_summary">Show a shortcut in the VoiceKB keyboard header</string>
-    <string name="voicekb_settings_return_to_previous_keyboard_summary">Automatically switch back after text has been inserted</string>
     <string name="voicekb_detect_short" translatable="false">DETECT</string>
     <string name="voicekb_smart_insertion_title">Smart insertion</string>
     <string name="voicekb_smart_insertion_settings_summary">Adjust capitalization before inserting transcribed text</string>

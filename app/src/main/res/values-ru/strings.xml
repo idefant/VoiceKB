@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="voicekb_record">Запись</string>
-    <string name="voicekb_send">Отправить (%1$s)</string>
-    <string name="voicekb_sending">Отправка...</string>
     <string name="voicekb_timeout_msg">Истекло время подключения к %1$s. Возможно, провайдер перегружен или соединение нестабильно.</string>
     <string name="voicekb_invalid_api_key_msg">Неверный API-ключ. Открыть настройки, чтобы исправить?</string>
     <string name="voicekb_quota_exceeded_msg">Квота %1$s исчерпана. Проверьте аккаунт провайдера или настройки API.</string>
