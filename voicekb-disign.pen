@@ -1,5 +1,5 @@
 {
-  "version": "2.13",
+  "version": "2.14",
   "children": [
     {
       "type": "frame",
@@ -7263,6 +7263,1326 @@
           ]
         }
       ]
+    },
+    {
+      "type": "frame",
+      "id": "NqAPn",
+      "x": 0,
+      "y": -420,
+      "name": "Component / Audio Item",
+      "theme": {},
+      "reusable": true,
+      "width": "fill_container(380)",
+      "fill": "$settings-bg",
+      "layout": "vertical",
+      "gap": 12,
+      "padding": [
+        14,
+        0
+      ],
+      "children": [
+        {
+          "type": "text",
+          "id": "FY7nG",
+          "name": "Transcript",
+          "fill": "$text-primary",
+          "textGrowth": "fixed-width",
+          "width": "fill_container",
+          "content": "Напиши ответ на письмо и добавь, что встречу переносим на четверг во второй половине дня.",
+          "lineHeight": 1.4,
+          "fontFamily": "Inter",
+          "fontSize": 15,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "VAA55",
+          "name": "Meta",
+          "fill": "$text-secondary",
+          "textGrowth": "fixed-width",
+          "width": "fill_container",
+          "content": "14:32 · 0:12 · Groq · whisper-large-v3-turbo",
+          "fontFamily": "Inter",
+          "fontSize": 12,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "frame",
+          "id": "X3txal",
+          "name": "Player",
+          "width": "fill_container",
+          "gap": 12,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "BxM9n",
+              "name": "Play Button",
+              "width": 44,
+              "height": 44,
+              "fill": "$play-container",
+              "cornerRadius": 22,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "PD0RD",
+                  "name": "Play Icon",
+                  "width": 24,
+                  "height": 24,
+                  "icon": "play_arrow",
+                  "library": "Material Symbols Rounded",
+                  "fill": "$accent-strong"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "IBqRY",
+              "name": "Slider",
+              "width": "fill_container",
+              "height": 24,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "rectangle",
+                  "cornerRadius": 2,
+                  "id": "sJgA8",
+                  "name": "Active Track",
+                  "fill": "$accent",
+                  "width": 78,
+                  "height": 4
+                },
+                {
+                  "type": "ellipse",
+                  "id": "LWMfp",
+                  "name": "Thumb",
+                  "fill": "$accent",
+                  "width": 14,
+                  "height": 14,
+                  "stroke": "$settings-bg",
+                  "strokeWidth": 2
+                },
+                {
+                  "type": "rectangle",
+                  "cornerRadius": 2,
+                  "id": "TiRhF",
+                  "name": "Inactive Track",
+                  "fill": "$slider-track",
+                  "width": "fill_container",
+                  "height": 4
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "d8G9NG",
+              "name": "Time Label",
+              "fill": "$text-secondary",
+              "content": "0:03 / 0:12",
+              "fontFamily": "Inter",
+              "fontSize": 12,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "b0btKk",
+          "name": "Actions",
+          "width": "fill_container",
+          "gap": 4,
+          "children": [
+            {
+              "type": "frame",
+              "id": "AYgy3",
+              "name": "Copy",
+              "cornerRadius": 8,
+              "gap": 6,
+              "padding": [
+                8,
+                10
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "Otwt7",
+                  "name": "Icon",
+                  "width": 18,
+                  "height": 18,
+                  "icon": "content_copy",
+                  "library": "Material Symbols Rounded",
+                  "fill": "$text-secondary"
+                },
+                {
+                  "type": "text",
+                  "id": "BKRGg",
+                  "name": "Label",
+                  "fill": "$text-secondary",
+                  "content": "Копировать",
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "500"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "lfvFd",
+              "name": "Reprocess",
+              "cornerRadius": 8,
+              "gap": 6,
+              "padding": [
+                8,
+                10
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "VeCnm",
+                  "name": "Icon",
+                  "width": 18,
+                  "height": 18,
+                  "icon": "refresh",
+                  "library": "Material Symbols Rounded",
+                  "fill": "$text-secondary"
+                },
+                {
+                  "type": "text",
+                  "id": "Vp6Wm",
+                  "name": "Label",
+                  "fill": "$text-secondary",
+                  "content": "Повторить",
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "500"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "c1E3LJ",
+              "name": "Delete",
+              "cornerRadius": 8,
+              "gap": 6,
+              "padding": [
+                8,
+                10
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "wpNZB",
+                  "name": "Icon",
+                  "width": 18,
+                  "height": 18,
+                  "icon": "delete",
+                  "library": "Material Symbols Rounded",
+                  "fill": "$danger"
+                },
+                {
+                  "type": "text",
+                  "id": "ORlkN",
+                  "name": "Label",
+                  "fill": "$danger",
+                  "content": "Удалить",
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "500"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "rectangle",
+          "id": "mZbF5",
+          "name": "Divider",
+          "fill": "$divider",
+          "width": "fill_container",
+          "height": 1
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "ASt8W",
+      "x": 7472,
+      "y": 0,
+      "name": "Settings / History / Light",
+      "theme": {
+        "mode": "light"
+      },
+      "clip": true,
+      "width": 412,
+      "height": 915,
+      "fill": "$settings-bg",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "rbNBt",
+          "name": "Status Bar",
+          "width": "fill_container",
+          "height": 44,
+          "fill": "$settings-bg",
+          "padding": [
+            0,
+            20
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "yqRNB",
+              "name": "Time",
+              "fill": "$text-primary",
+              "content": "12:42",
+              "fontFamily": "Inter",
+              "fontSize": 13,
+              "fontWeight": "600"
+            },
+            {
+              "type": "text",
+              "id": "vlCZz",
+              "name": "Status Icons",
+              "fill": "$text-secondary",
+              "content": "LTE  92%",
+              "fontFamily": "Inter",
+              "fontSize": 11,
+              "fontWeight": "600"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "lbwJI",
+          "name": "App Bar",
+          "width": "fill_container",
+          "height": 64,
+          "fill": "$settings-bg",
+          "gap": 6,
+          "padding": [
+            0,
+            12,
+            0,
+            8
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "Ge2H1",
+              "name": "Back Button",
+              "width": 44,
+              "height": 44,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "UFvnX",
+                  "name": "Back Icon",
+                  "width": 24,
+                  "height": 24,
+                  "icon": "arrow_back",
+                  "library": "Material Symbols Rounded",
+                  "fill": "$text-primary"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "MPf3Y",
+              "name": "Title",
+              "fill": "$text-primary",
+              "content": "История",
+              "fontFamily": "Inter",
+              "fontSize": 20,
+              "fontWeight": "600"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "CTy4N",
+          "name": "Content",
+          "width": "fill_container",
+          "fill": "$settings-bg",
+          "layout": "vertical",
+          "padding": [
+            8,
+            16,
+            6,
+            16
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "o0Ts1",
+              "name": "Search Bar",
+              "width": "fill_container",
+              "height": 48,
+              "fill": "$search-bg",
+              "cornerRadius": 24,
+              "gap": 12,
+              "padding": [
+                0,
+                16
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "wGpOP",
+                  "name": "Search Icon",
+                  "width": 20,
+                  "height": 20,
+                  "icon": "search",
+                  "library": "Material Symbols Rounded",
+                  "fill": "$text-muted"
+                },
+                {
+                  "type": "text",
+                  "id": "jwtrf",
+                  "name": "Placeholder",
+                  "fill": "$text-muted",
+                  "content": "Поиск по тексту",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "ptPv8",
+              "name": "Group Сегодня",
+              "width": "fill_container",
+              "layout": "vertical",
+              "padding": [
+                20,
+                0,
+                8,
+                0
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "fQwfA",
+                  "name": "Group Title",
+                  "fill": "$accent",
+                  "content": "Сегодня",
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "id": "NPpMc",
+              "type": "ref",
+              "ref": "NqAPn",
+              "name": "Audio 1",
+              "width": "fill_container",
+              "descendants": {
+                "FY7nG": {
+                  "content": "Напиши ответ на письмо и добавь, что встречу переносим на четверг во второй половине дня."
+                },
+                "VAA55": {
+                  "content": "14:32 · 0:12 · Groq · whisper-large-v3-turbo"
+                },
+                "sJgA8": {
+                  "width": 78
+                },
+                "d8G9NG": {
+                  "content": "0:03 / 0:12"
+                }
+              }
+            },
+            {
+              "id": "r5KMy",
+              "type": "ref",
+              "ref": "NqAPn",
+              "name": "Audio 2",
+              "width": "fill_container",
+              "descendants": {
+                "FY7nG": {
+                  "content": "Список покупок: молоко, хлеб, два авокадо, кофе в зёрнах и упаковка овсяного печенья."
+                },
+                "VAA55": {
+                  "content": "09:15 · 0:47 · Groq · whisper-large-v3-turbo"
+                },
+                "sJgA8": {
+                  "width": 8
+                },
+                "d8G9NG": {
+                  "content": "0:00 / 0:47"
+                }
+              }
+            },
+            {
+              "type": "frame",
+              "id": "awQDA",
+              "name": "Group Вчера",
+              "width": "fill_container",
+              "layout": "vertical",
+              "padding": [
+                20,
+                0,
+                8,
+                0
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "Y2d8lg",
+                  "name": "Group Title",
+                  "fill": "$accent",
+                  "content": "Вчера",
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "id": "EhKr0",
+              "type": "ref",
+              "ref": "NqAPn",
+              "name": "Audio 3",
+              "width": "fill_container",
+              "descendants": {
+                "FY7nG": {
+                  "content": "Идея для статьи: как голосовой ввод меняет привычки письма на телефоне за неделю использования."
+                },
+                "VAA55": {
+                  "content": "21:08 · 1:23 · OpenAI · whisper-1"
+                },
+                "sJgA8": {
+                  "width": 150
+                },
+                "d8G9NG": {
+                  "content": "0:35 / 1:23"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "i7shbk",
+      "x": 7948,
+      "y": 0,
+      "name": "Settings / History Empty / Light",
+      "theme": {
+        "mode": "light"
+      },
+      "clip": true,
+      "width": 412,
+      "height": 915,
+      "fill": "$settings-bg",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "FTXSt",
+          "name": "Status Bar",
+          "width": "fill_container",
+          "height": 44,
+          "fill": "$settings-bg",
+          "padding": [
+            0,
+            20
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "evMoI",
+              "name": "Time",
+              "fill": "$text-primary",
+              "content": "12:42",
+              "fontFamily": "Inter",
+              "fontSize": 13,
+              "fontWeight": "600"
+            },
+            {
+              "type": "text",
+              "id": "D3SyHh",
+              "name": "Status Icons",
+              "fill": "$text-secondary",
+              "content": "LTE  92%",
+              "fontFamily": "Inter",
+              "fontSize": 11,
+              "fontWeight": "600"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "C41ZG",
+          "name": "App Bar",
+          "width": "fill_container",
+          "height": 64,
+          "fill": "$settings-bg",
+          "gap": 6,
+          "padding": [
+            0,
+            12,
+            0,
+            8
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "udyQe",
+              "name": "Back Button",
+              "width": 44,
+              "height": 44,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "u846wd",
+                  "name": "Back Icon",
+                  "width": 24,
+                  "height": 24,
+                  "icon": "arrow_back",
+                  "library": "Material Symbols Rounded",
+                  "fill": "$text-primary"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "h4ntB",
+              "name": "Title",
+              "fill": "$text-primary",
+              "content": "История",
+              "fontFamily": "Inter",
+              "fontSize": 20,
+              "fontWeight": "600"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "YPqhd",
+          "name": "Empty State",
+          "width": "fill_container",
+          "height": "fill_container",
+          "layout": "vertical",
+          "gap": 18,
+          "padding": [
+            0,
+            40,
+            80,
+            40
+          ],
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "gw3vb",
+              "name": "Icon Circle",
+              "width": 104,
+              "height": 104,
+              "fill": "$search-bg",
+              "cornerRadius": 52,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "OqOnD",
+                  "name": "Icon",
+                  "width": 48,
+                  "height": 48,
+                  "icon": "graphic_eq",
+                  "library": "Material Symbols Rounded",
+                  "fill": "$text-muted"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "N4Woy",
+              "name": "Empty Title",
+              "fill": "$text-primary",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "История пуста",
+              "textAlign": "center",
+              "fontFamily": "Inter",
+              "fontSize": 17,
+              "fontWeight": "600"
+            },
+            {
+              "type": "text",
+              "id": "sOvqH",
+              "name": "Empty Subtitle",
+              "fill": "$text-secondary",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Продиктуйте что-нибудь — распознанные записи появятся здесь, и вы сможете переслушать и скопировать их.",
+              "lineHeight": 1.45,
+              "textAlign": "center",
+              "fontFamily": "Inter",
+              "fontSize": 14,
+              "fontWeight": "normal",
+              "fontStyle": "italic"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "zRCOf",
+      "x": 7472,
+      "y": 2022,
+      "name": "Settings / History / Dark",
+      "theme": {
+        "mode": "dark"
+      },
+      "clip": true,
+      "width": 412,
+      "height": 915,
+      "fill": "$settings-bg",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "OSLea",
+          "name": "Status Bar",
+          "width": "fill_container",
+          "height": 44,
+          "fill": "$settings-bg",
+          "padding": [
+            0,
+            20
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "b2FNW",
+              "name": "Time",
+              "fill": "$text-primary",
+              "content": "12:42",
+              "fontFamily": "Inter",
+              "fontSize": 13,
+              "fontWeight": "600"
+            },
+            {
+              "type": "text",
+              "id": "oQoTY",
+              "name": "Status Icons",
+              "fill": "$text-secondary",
+              "content": "LTE  92%",
+              "fontFamily": "Inter",
+              "fontSize": 11,
+              "fontWeight": "600"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "e4exxN",
+          "name": "App Bar",
+          "width": "fill_container",
+          "height": 64,
+          "fill": "$settings-bg",
+          "gap": 6,
+          "padding": [
+            0,
+            12,
+            0,
+            8
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "b8CDQ",
+              "name": "Back Button",
+              "width": 44,
+              "height": 44,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "cfjUR",
+                  "name": "Back Icon",
+                  "width": 24,
+                  "height": 24,
+                  "icon": "arrow_back",
+                  "library": "Material Symbols Rounded",
+                  "fill": "$text-primary"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "C69P1g",
+              "name": "Title",
+              "fill": "$text-primary",
+              "content": "История",
+              "fontFamily": "Inter",
+              "fontSize": 20,
+              "fontWeight": "600"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "hD0f9",
+          "name": "Content",
+          "width": "fill_container",
+          "fill": "$settings-bg",
+          "layout": "vertical",
+          "padding": [
+            8,
+            16,
+            6,
+            16
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "BNaxq",
+              "name": "Search Bar",
+              "width": "fill_container",
+              "height": 48,
+              "fill": "$search-bg",
+              "cornerRadius": 24,
+              "gap": 12,
+              "padding": [
+                0,
+                16
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "ASxei",
+                  "name": "Search Icon",
+                  "width": 20,
+                  "height": 20,
+                  "icon": "search",
+                  "library": "Material Symbols Rounded",
+                  "fill": "$text-muted"
+                },
+                {
+                  "type": "text",
+                  "id": "hwRtU",
+                  "name": "Placeholder",
+                  "fill": "$text-muted",
+                  "content": "Поиск по тексту",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "ns00i",
+              "name": "Group Сегодня",
+              "width": "fill_container",
+              "layout": "vertical",
+              "padding": [
+                20,
+                0,
+                8,
+                0
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "bOvkX",
+                  "name": "Group Title",
+                  "fill": "$accent",
+                  "content": "Сегодня",
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "id": "mYGtz",
+              "type": "ref",
+              "ref": "NqAPn",
+              "name": "Audio 1",
+              "width": "fill_container",
+              "descendants": {
+                "FY7nG": {
+                  "content": "Напиши ответ на письмо и добавь, что встречу переносим на четверг во второй половине дня."
+                },
+                "VAA55": {
+                  "content": "14:32 · 0:12 · Groq · whisper-large-v3-turbo"
+                },
+                "sJgA8": {
+                  "width": 78
+                },
+                "d8G9NG": {
+                  "content": "0:03 / 0:12"
+                }
+              }
+            },
+            {
+              "id": "M3FEg",
+              "type": "ref",
+              "ref": "NqAPn",
+              "name": "Audio 2",
+              "width": "fill_container",
+              "descendants": {
+                "FY7nG": {
+                  "content": "Список покупок: молоко, хлеб, два авокадо, кофе в зёрнах и упаковка овсяного печенья."
+                },
+                "VAA55": {
+                  "content": "09:15 · 0:47 · Groq · whisper-large-v3-turbo"
+                },
+                "sJgA8": {
+                  "width": 8
+                },
+                "d8G9NG": {
+                  "content": "0:00 / 0:47"
+                }
+              }
+            },
+            {
+              "type": "frame",
+              "id": "KVVmj",
+              "name": "Group Вчера",
+              "width": "fill_container",
+              "layout": "vertical",
+              "padding": [
+                20,
+                0,
+                8,
+                0
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "z7PEV",
+                  "name": "Group Title",
+                  "fill": "$accent",
+                  "content": "Вчера",
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "id": "mdtRv",
+              "type": "ref",
+              "ref": "NqAPn",
+              "name": "Audio 3",
+              "width": "fill_container",
+              "descendants": {
+                "FY7nG": {
+                  "content": "Идея для статьи: как голосовой ввод меняет привычки письма на телефоне за неделю использования."
+                },
+                "VAA55": {
+                  "content": "21:08 · 1:23 · OpenAI · whisper-1"
+                },
+                "sJgA8": {
+                  "width": 150
+                },
+                "d8G9NG": {
+                  "content": "0:35 / 1:23"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "j9WCSt",
+      "x": 7948,
+      "y": 2022,
+      "name": "Settings / History Empty / Dark",
+      "theme": {
+        "mode": "dark"
+      },
+      "clip": true,
+      "width": 412,
+      "height": 915,
+      "fill": "$settings-bg",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "A4hlpr",
+          "name": "Status Bar",
+          "width": "fill_container",
+          "height": 44,
+          "fill": "$settings-bg",
+          "padding": [
+            0,
+            20
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "U3kjKd",
+              "name": "Time",
+              "fill": "$text-primary",
+              "content": "12:42",
+              "fontFamily": "Inter",
+              "fontSize": 13,
+              "fontWeight": "600"
+            },
+            {
+              "type": "text",
+              "id": "d9exz",
+              "name": "Status Icons",
+              "fill": "$text-secondary",
+              "content": "LTE  92%",
+              "fontFamily": "Inter",
+              "fontSize": 11,
+              "fontWeight": "600"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "l3RrEq",
+          "name": "App Bar",
+          "width": "fill_container",
+          "height": 64,
+          "fill": "$settings-bg",
+          "gap": 6,
+          "padding": [
+            0,
+            12,
+            0,
+            8
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "CFhwe",
+              "name": "Back Button",
+              "width": 44,
+              "height": 44,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "C98NfG",
+                  "name": "Back Icon",
+                  "width": 24,
+                  "height": 24,
+                  "icon": "arrow_back",
+                  "library": "Material Symbols Rounded",
+                  "fill": "$text-primary"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "bUBKA",
+              "name": "Title",
+              "fill": "$text-primary",
+              "content": "История",
+              "fontFamily": "Inter",
+              "fontSize": 20,
+              "fontWeight": "600"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "XCvWJ",
+          "name": "Empty State",
+          "width": "fill_container",
+          "height": "fill_container",
+          "layout": "vertical",
+          "gap": 18,
+          "padding": [
+            0,
+            40,
+            80,
+            40
+          ],
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "c9nxpj",
+              "name": "Icon Circle",
+              "width": 104,
+              "height": 104,
+              "fill": "$search-bg",
+              "cornerRadius": 52,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "p7IjT",
+                  "name": "Icon",
+                  "width": 48,
+                  "height": 48,
+                  "icon": "graphic_eq",
+                  "library": "Material Symbols Rounded",
+                  "fill": "$text-muted"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "PiLtV",
+              "name": "Empty Title",
+              "fill": "$text-primary",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "История пуста",
+              "textAlign": "center",
+              "fontFamily": "Inter",
+              "fontSize": 17,
+              "fontWeight": "600"
+            },
+            {
+              "type": "text",
+              "id": "ofjlh",
+              "name": "Empty Subtitle",
+              "fill": "$text-secondary",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Продиктуйте что-нибудь — распознанные записи появятся здесь, и вы сможете переслушать и скопировать их.",
+              "lineHeight": 1.45,
+              "textAlign": "center",
+              "fontFamily": "Inter",
+              "fontSize": 14,
+              "fontWeight": "normal",
+              "fontStyle": "italic"
+            }
+          ]
+        }
+      ]
     }
-  ]
+  ],
+  "themes": {
+    "mode": [
+      "light",
+      "dark"
+    ]
+  },
+  "variables": {
+    "settings-bg": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#FFFFFF",
+          "theme": {
+            "mode": "light"
+          }
+        },
+        {
+          "value": "#1B1B1D",
+          "theme": {
+            "mode": "dark"
+          }
+        }
+      ]
+    },
+    "text-primary": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#1C1B1F",
+          "theme": {
+            "mode": "light"
+          }
+        },
+        {
+          "value": "#F4F6F8",
+          "theme": {
+            "mode": "dark"
+          }
+        }
+      ]
+    },
+    "text-secondary": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#49454F",
+          "theme": {
+            "mode": "light"
+          }
+        },
+        {
+          "value": "#A6AFBC",
+          "theme": {
+            "mode": "dark"
+          }
+        }
+      ]
+    },
+    "text-muted": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#8A8F98",
+          "theme": {
+            "mode": "light"
+          }
+        },
+        {
+          "value": "#7C8591",
+          "theme": {
+            "mode": "dark"
+          }
+        }
+      ]
+    },
+    "accent": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#29B6F6",
+          "theme": {
+            "mode": "light"
+          }
+        },
+        {
+          "value": "#29B6F6",
+          "theme": {
+            "mode": "dark"
+          }
+        }
+      ]
+    },
+    "accent-strong": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#1C7EAB",
+          "theme": {
+            "mode": "light"
+          }
+        },
+        {
+          "value": "#72BFEA",
+          "theme": {
+            "mode": "dark"
+          }
+        }
+      ]
+    },
+    "divider": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#E2E8F0",
+          "theme": {
+            "mode": "light"
+          }
+        },
+        {
+          "value": "#30343B",
+          "theme": {
+            "mode": "dark"
+          }
+        }
+      ]
+    },
+    "danger": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#E53935",
+          "theme": {
+            "mode": "light"
+          }
+        },
+        {
+          "value": "#FF7378",
+          "theme": {
+            "mode": "dark"
+          }
+        }
+      ]
+    },
+    "slider-track": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#D3D8DE",
+          "theme": {
+            "mode": "light"
+          }
+        },
+        {
+          "value": "#3A4049",
+          "theme": {
+            "mode": "dark"
+          }
+        }
+      ]
+    },
+    "play-container": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#DDEAF4",
+          "theme": {
+            "mode": "light"
+          }
+        },
+        {
+          "value": "#1D3A4B",
+          "theme": {
+            "mode": "dark"
+          }
+        }
+      ]
+    },
+    "search-bg": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#F1F3F4",
+          "theme": {
+            "mode": "light"
+          }
+        },
+        {
+          "value": "#2B2F36",
+          "theme": {
+            "mode": "dark"
+          }
+        }
+      ]
+    }
+  },
+  "fileToken": "0b8f0442-1ff4-4091-835c-f9f919bd6596"
 }

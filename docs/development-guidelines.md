@@ -47,6 +47,13 @@ git diff --check
 - Строковый ресурс удаляется вместе с его последним использованием. Убрал `R.string.X` / `@string/X` из кода и разметки — в том же изменении удали строку из `values/strings.xml` и из всех локалей (`values-de`, `values-es`, `values-pt`, `values-ru`). Неиспользуемых переводов в репозитории быть не должно; исключение — строка, заведённая заранее под фичу, которая уже в работе.
 - Светлая и тёмная темы поддерживаются параллельно: тёмные варианты ресурсов — в `res/drawable-night/` и `res/values-night/`. При изменении цветов и drawable клавиатуры проверять обе темы.
 
+## Дизайн экранов настроек
+
+- Экраны настроек и другие вторичные экраны (полные настройки, API-настройки, промпты, статистика использования, онбординг) собираются из стандартных компонентов Android без кастомного UI-фреймворка: главный экран настроек — на AndroidX `Preference` (`PreferenceScreen` / `PreferenceCategory` / `SwitchPreference` / `ListPreference` и т.п.), остальные — на Material Components и системных виджетах (`MaterialButton`, `Switch`, `Spinner`, `EditText`, `RadioButton`, `RecyclerView`, `ScrollView`).
+- Дизайн-система этих экранов сделана на основе Material Design 3 (Material You): базовая тема `Theme.Material3.Light` / `Theme.Material3.Dark` (`res/values/themes.xml`, `res/values-night/themes.xml`), шрифт Inter, акцент `colorPrimary` = `@color/voicekb_blue` (#29B6F6). Заголовки секций и активные элементы — акцентным цветом, вторичный текст — `?android:attr/textColorSecondary`, разделители и опасные действия — из `res/values/colors.xml`.
+- Списки строятся на `RecyclerView` с плоскими элементами и разделителями, без карточек; пустое состояние — центрированный курсивный текст (образец — экран статистики использования).
+- Макеты этих экранов ведутся в `voicekb-disign.pen` рядом с макетами клавиатуры, в двух вариантах — Light и Dark; при правках проверять обе темы.
+
 ## Локальная среда
 
 Ожидаемые инструменты Windows:
