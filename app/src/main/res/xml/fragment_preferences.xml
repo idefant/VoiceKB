@@ -99,6 +99,11 @@
             tools:summary="Estimated cost: 1.34 $"
             app:iconSpaceReserved="false"/>
 
+        <androidx.preference.Preference
+            android:key="com.idefant.voicekb.history"
+            android:title="@string/voicekb_settings_history"
+            app:iconSpaceReserved="false"/>
+
     </androidx.preference.PreferenceCategory>
 
     <androidx.preference.PreferenceCategory

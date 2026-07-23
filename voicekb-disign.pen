@@ -57,7 +57,7 @@
               "fill": "#EEF4FA"
             },
             "rAkk5/uCVp3": {
-              "fill": "#3476A2"
+              "fill": "$accent-strong"
             },
             "sfvbo": {
               "opacity": 1
@@ -478,7 +478,7 @@
                       "type": "text",
                       "id": "V3R2D8",
                       "name": "IME Language Label",
-                      "fill": "#3476A2",
+                      "fill": "$accent-strong",
                       "content": "DETECT",
                       "fontFamily": "Inter",
                       "fontSize": 10,
@@ -872,7 +872,7 @@
                       "height": 21,
                       "icon": "corner-down-left",
                       "library": "lucide",
-                      "fill": "#3476A2"
+                      "fill": "$accent-strong"
                     }
                   ]
                 }
@@ -944,7 +944,7 @@
               "fill": "#EEF4FA"
             },
             "rAkk5/uCVp3": {
-              "fill": "#3476A2"
+              "fill": "$accent-strong"
             },
             "sfvbo": {
               "opacity": 1
@@ -1008,7 +1008,7 @@
               "fill": "#EEF4FA"
             },
             "rAkk5/uCVp3": {
-              "fill": "#3476A2"
+              "fill": "$accent-strong"
             },
             "dq9DD": {
               "opacity": 0.38
@@ -1092,6 +1092,9 @@
       "x": 476,
       "y": 1990,
       "name": "Component / VoiceKB IME / Dark",
+      "theme": {
+        "mode": "dark"
+      },
       "reusable": true,
       "width": 412,
       "height": 240,
@@ -1117,7 +1120,7 @@
               "fill": "#2B2F36"
             },
             "V3R2D8": {
-              "fill": "#72BFEA"
+              "fill": "$accent-strong"
             },
             "hNLdj": {
               "fill": "#72BFEA"
@@ -1189,7 +1192,7 @@
               "fill": "#1D3A4B"
             },
             "jQC6q": {
-              "fill": "#72BFEA"
+              "fill": "$accent-strong"
             }
           }
         }
@@ -1227,7 +1230,7 @@
               "fill": "#2B2F36"
             },
             "fhy7N/rAkk5/uCVp3": {
-              "fill": "#72BFEA"
+              "fill": "$accent-strong"
             },
             "fhy7N/sfvbo": {
               "opacity": 1
@@ -1328,7 +1331,7 @@
               "fill": "#2B2F36"
             },
             "fhy7N/rAkk5/uCVp3": {
-              "fill": "#72BFEA"
+              "fill": "$accent-strong"
             },
             "fhy7N/sfvbo": {
               "opacity": 1
@@ -1389,7 +1392,7 @@
               "fill": "#2B2F36"
             },
             "fhy7N/rAkk5/uCVp3": {
-              "fill": "#72BFEA"
+              "fill": "$accent-strong"
             },
             "fhy7N/dq9DD": {
               "opacity": 0.38
@@ -4838,7 +4841,7 @@
           "height": 20,
           "icon": "clock-4",
           "library": "lucide",
-          "fill": "#3476A2"
+          "fill": "$accent-strong"
         }
       ]
     },
@@ -4874,6 +4877,9 @@
       "x": 204,
       "y": 3893,
       "name": "Component / IME One-Time Return Button / Dark / Active",
+      "theme": {
+        "mode": "dark"
+      },
       "reusable": true,
       "width": 35,
       "height": 35,
@@ -4890,7 +4896,7 @@
           "height": 20,
           "icon": "clock-4",
           "library": "lucide",
-          "fill": "#72BFEA"
+          "fill": "$accent-strong"
         }
       ]
     },
@@ -5067,7 +5073,7 @@
                   "type": "text",
                   "id": "p8T0jz",
                   "name": "Browser Voice Language Label",
-                  "fill": "#3476A2",
+                  "fill": "$accent-strong",
                   "content": "DETECT",
                   "fontFamily": "Inter",
                   "fontSize": 10,
@@ -5095,6 +5101,9 @@
       "x": 340,
       "y": 3989,
       "name": "Component / Browser Voice Input Dialog / Dark",
+      "theme": {
+        "mode": "dark"
+      },
       "reusable": true,
       "clip": true,
       "width": 324,
@@ -5133,7 +5142,7 @@
               "fill": "#2B2F36"
             },
             "p8T0jz": {
-              "fill": "#72BFEA"
+              "fill": "$accent-strong"
             },
             "YUJEf": {
               "fill": "#72BFEA"
@@ -7307,6 +7316,19 @@
           "fontWeight": "normal"
         },
         {
+          "type": "text",
+          "id": "d4R0p",
+          "x": 0,
+          "y": 0,
+          "name": "Details",
+          "enabled": false,
+          "fill": "$text-secondary",
+          "content": "Подробнее",
+          "fontFamily": "Inter",
+          "fontSize": 12,
+          "fontWeight": "600"
+        },
+        {
           "type": "frame",
           "id": "X3txal",
           "name": "Player",
@@ -7329,8 +7351,8 @@
                   "type": "icon",
                   "id": "PD0RD",
                   "name": "Play Icon",
-                  "width": 24,
-                  "height": 24,
+                  "width": 28,
+                  "height": 28,
                   "icon": "play_arrow",
                   "library": "Material Symbols Rounded",
                   "fill": "$accent-strong"
@@ -7666,7 +7688,7 @@
               "width": "fill_container",
               "layout": "vertical",
               "padding": [
-                20,
+                22,
                 0,
                 8,
                 0
@@ -7676,10 +7698,10 @@
                   "type": "text",
                   "id": "fQwfA",
                   "name": "Group Title",
-                  "fill": "$accent",
+                  "fill": "$accent-strong",
                   "content": "Сегодня",
                   "fontFamily": "Inter",
-                  "fontSize": 13,
+                  "fontSize": 18,
                   "fontWeight": "600"
                 }
               ]
@@ -7702,6 +7724,31 @@
                 },
                 "d8G9NG": {
                   "content": "0:03 / 0:12"
+                }
+              }
+            },
+            {
+              "id": "YN2q3",
+              "type": "ref",
+              "ref": "NqAPn",
+              "name": "Audio Error",
+              "width": "fill_container",
+              "descendants": {
+                "FY7nG": {
+                  "fill": "$danger",
+                  "content": "Не удалось распознать — превышена квота."
+                },
+                "VAA55": {
+                  "content": "14:40 · 0:08 · Groq · whisper-large-v3-turbo"
+                },
+                "d4R0p": {
+                  "enabled": true
+                },
+                "sJgA8": {
+                  "width": 8
+                },
+                "d8G9NG": {
+                  "content": "0:00 / 0:08"
                 }
               }
             },
@@ -7733,7 +7780,7 @@
               "width": "fill_container",
               "layout": "vertical",
               "padding": [
-                20,
+                22,
                 0,
                 8,
                 0
@@ -7743,10 +7790,10 @@
                   "type": "text",
                   "id": "Y2d8lg",
                   "name": "Group Title",
-                  "fill": "$accent",
+                  "fill": "$accent-strong",
                   "content": "Вчера",
                   "fontFamily": "Inter",
-                  "fontSize": 13,
+                  "fontSize": 18,
                   "fontWeight": "600"
                 }
               ]
@@ -8106,7 +8153,7 @@
               "width": "fill_container",
               "layout": "vertical",
               "padding": [
-                20,
+                22,
                 0,
                 8,
                 0
@@ -8116,10 +8163,10 @@
                   "type": "text",
                   "id": "bOvkX",
                   "name": "Group Title",
-                  "fill": "$accent",
+                  "fill": "$accent-strong",
                   "content": "Сегодня",
                   "fontFamily": "Inter",
-                  "fontSize": 13,
+                  "fontSize": 18,
                   "fontWeight": "600"
                 }
               ]
@@ -8142,6 +8189,31 @@
                 },
                 "d8G9NG": {
                   "content": "0:03 / 0:12"
+                }
+              }
+            },
+            {
+              "id": "PQD89",
+              "type": "ref",
+              "ref": "NqAPn",
+              "name": "Audio Error",
+              "width": "fill_container",
+              "descendants": {
+                "FY7nG": {
+                  "fill": "$danger",
+                  "content": "Не удалось распознать — превышена квота."
+                },
+                "VAA55": {
+                  "content": "14:40 · 0:08 · Groq · whisper-large-v3-turbo"
+                },
+                "d4R0p": {
+                  "enabled": true
+                },
+                "sJgA8": {
+                  "width": 8
+                },
+                "d8G9NG": {
+                  "content": "0:00 / 0:08"
                 }
               }
             },
@@ -8173,7 +8245,7 @@
               "width": "fill_container",
               "layout": "vertical",
               "padding": [
-                20,
+                22,
                 0,
                 8,
                 0
@@ -8183,10 +8255,10 @@
                   "type": "text",
                   "id": "z7PEV",
                   "name": "Group Title",
-                  "fill": "$accent",
+                  "fill": "$accent-strong",
                   "content": "Вчера",
                   "fontFamily": "Inter",
-                  "fontSize": 13,
+                  "fontSize": 18,
                   "fontWeight": "600"
                 }
               ]
@@ -8485,7 +8557,7 @@
       "type": "color",
       "value": [
         {
-          "value": "#1C7EAB",
+          "value": "#3476A2",
           "theme": {
             "mode": "light"
           }

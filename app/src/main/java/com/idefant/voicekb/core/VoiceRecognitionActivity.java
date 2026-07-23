@@ -47,7 +47,7 @@ import com.openai.models.audio.transcriptions.TranscriptionCreateParams;
 
 import com.idefant.voicekb.VoiceKBUtils;
 import com.idefant.voicekb.R;
-import com.idefant.voicekb.usage.UsageDatabaseHelper;
+import com.idefant.voicekb.data.VoiceKBDatabaseHelper;
 
 import java.io.File;
 import java.io.IOException;
@@ -94,7 +94,7 @@ public class VoiceRecognitionActivity extends AppCompatActivity {
     private ExecutorService apiThread;
     private AlertDialog languageDialog;
     private SharedPreferences sp;
-    private UsageDatabaseHelper usageDb;
+    private VoiceKBDatabaseHelper usageDb;
     private File audioFile;
     private VoiceUiState uiState = VoiceUiState.IDLE;
     private String selectedLanguage;
@@ -109,7 +109,7 @@ public class VoiceRecognitionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_voice_recognition);
 
         sp = getSharedPreferences("com.idefant.voicekb", MODE_PRIVATE);
-        usageDb = new UsageDatabaseHelper(this);
+        usageDb = new VoiceKBDatabaseHelper(this);
         dialogRoot = findViewById(R.id.voice_recognition_dialog);
         recordButton = findViewById(R.id.voice_recognition_record_btn);
         pauseButton = findViewById(R.id.voice_recognition_pause_btn);

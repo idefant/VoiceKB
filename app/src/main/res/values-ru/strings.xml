@@ -240,4 +240,33 @@
     <string name="voicekb_space">Пробел</string>
     <string name="voicekb_enable_keyboard_title">Включить клавиатуру VoiceKB?</string>
     <string name="voicekb_enable_keyboard_message">Клавиатура VoiceKB больше не включена в системных настройках. Открыть настройки клавиатур?</string>
+
+    <!-- History -->
+    <string name="voicekb_settings_history">История 🕘</string>
+    <string name="voicekb_history_title">История</string>
+    <string name="voicekb_history_search_hint">Поиск по тексту</string>
+    <string name="voicekb_history_empty_title">История пуста</string>
+    <string name="voicekb_history_empty_subtitle">Продиктуйте что-нибудь — распознанные записи появятся здесь, и вы сможете переслушать и скопировать их.</string>
+    <string name="voicekb_history_group_today">Сегодня</string>
+    <string name="voicekb_history_group_yesterday">Вчера</string>
+    <string name="voicekb_history_action_copy">Копировать</string>
+    <string name="voicekb_history_action_reprocess">Повторить</string>
+    <string name="voicekb_history_action_delete">Удалить</string>
+    <string name="voicekb_history_copied">Скопировано в буфер обмена</string>
+    <string name="voicekb_history_delete_title">Удалить запись?</string>
+    <string name="voicekb_history_delete_message">Запись и её аудио будут удалены безвозвратно.</string>
+    <string name="voicekb_history_delete_confirm">Удалить</string>
+    <string name="voicekb_history_reprocessing">Повторная обработка…</string>
+    <string name="voicekb_history_reprocess_failed">Не удалось повторить обработку</string>
+    <string name="voicekb_history_audio_missing">Аудиофайл больше недоступен</string>
+    <string name="voicekb_history_play">Воспроизвести</string>
+    <string name="voicekb_history_pause">Пауза</string>
+    <string name="voicekb_history_details_show">Подробнее</string>
+    <string name="voicekb_history_details_hide">Скрыть подробности</string>
+    <string name="voicekb_history_error_invalid_api_key">Неверный API-ключ</string>
+    <string name="voicekb_history_error_quota">Превышена квота</string>
+    <string name="voicekb_history_error_too_long">Запись слишком длинная</string>
+    <string name="voicekb_history_error_format">Формат аудио не поддерживается</string>
+    <string name="voicekb_history_error_network">Ошибка сети</string>
+    <string name="voicekb_history_error_timeout">Превышено время ожидания</string>
 </resources>

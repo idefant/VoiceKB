@@ -258,4 +258,33 @@
     <string name="voicekb_smart_insertion_quote_summary">Keep quoted text capitalized after the Markdown quote marker &gt; followed by a space.</string>
     <string name="voicekb_smart_insertion_blacklist_title">Case-preserve blacklist</string>
     <string name="voicekb_smart_insertion_blacklist_summary">One word per line. If a word contains an apostrophe, only the part before the apostrophe is checked.</string>
+
+    <!-- History -->
+    <string name="voicekb_settings_history">History 🕘</string>
+    <string name="voicekb_history_title">History</string>
+    <string name="voicekb_history_search_hint">Search transcripts</string>
+    <string name="voicekb_history_empty_title">History is empty</string>
+    <string name="voicekb_history_empty_subtitle">Dictate something — recognized entries will appear here, and you can replay and copy them.</string>
+    <string name="voicekb_history_group_today">Today</string>
+    <string name="voicekb_history_group_yesterday">Yesterday</string>
+    <string name="voicekb_history_action_copy">Copy</string>
+    <string name="voicekb_history_action_reprocess">Reprocess</string>
+    <string name="voicekb_history_action_delete">Delete</string>
+    <string name="voicekb_history_copied">Copied to clipboard</string>
+    <string name="voicekb_history_delete_title">Delete recording?</string>
+    <string name="voicekb_history_delete_message">This entry and its audio will be permanently removed.</string>
+    <string name="voicekb_history_delete_confirm">Delete</string>
+    <string name="voicekb_history_reprocessing">Reprocessing…</string>
+    <string name="voicekb_history_reprocess_failed">Couldn\'t reprocess the recording</string>
+    <string name="voicekb_history_audio_missing">The audio file is no longer available</string>
+    <string name="voicekb_history_play">Play</string>
+    <string name="voicekb_history_pause">Pause</string>
+    <string name="voicekb_history_details_show">Details</string>
+    <string name="voicekb_history_details_hide">Hide details</string>
+    <string name="voicekb_history_error_invalid_api_key">Invalid API key</string>
+    <string name="voicekb_history_error_quota">Quota exceeded</string>
+    <string name="voicekb_history_error_too_long">Recording too long</string>
+    <string name="voicekb_history_error_format">Audio format not supported</string>
+    <string name="voicekb_history_error_network">Network error</string>
+    <string name="voicekb_history_error_timeout">Request timed out</string>
 </resources>

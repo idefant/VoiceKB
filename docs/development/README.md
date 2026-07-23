@@ -9,3 +9,4 @@
 | Умная вставка текста | [smart-insertion.md](smart-insertion.md) | Почему правится только первая буква и ведущий пробел, как определяется конец предложения, аббревиатуры и исключения |
 | Панель спецсимволов | [special-characters-tray.md](special-characters-tray.md) | Выбор ближайшего символа и расширенная до краёв клавиатуры область выбора |
 | Отложенная крашлитика | [crash-reporting.md](crash-reporting.md) | Почему runtime-отчётность о сбоях отключена в сборке |
+| Хранилище истории и повторная отправка | [history-storage.md](history-storage.md) | SQLite + durable-аудио, RecyclerView для длинного списка, MediaPlayer, повторная обработка и источник повторной отправки |

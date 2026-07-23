@@ -63,4 +63,15 @@
     <color name="voicekb_keyboard_tray_divider_dark">#3A4049</color>
     <color name="voicekb_keyboard_divider_light">#E2E8F0</color>
     <color name="voicekb_keyboard_divider_dark">#30343B</color>
+
+    <!-- History screen (light; dark overrides live in values-night/colors.xml) -->
+    <color name="voicekb_history_text_primary">#1C1B1F</color>
+    <color name="voicekb_history_text_secondary">#49454F</color>
+    <color name="voicekb_history_text_muted">#8A8F98</color>
+    <color name="voicekb_history_divider">#E2E8F0</color>
+    <color name="voicekb_history_danger">#E53935</color>
+    <color name="voicekb_history_accent_strong">#3476A2</color>
+    <color name="voicekb_history_play_container">#DDEAF4</color>
+    <color name="voicekb_history_search_bg">#F1F3F4</color>
+    <color name="voicekb_history_slider_track">#D3D8DE</color>
 </resources>

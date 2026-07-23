@@ -26,8 +26,9 @@ import com.idefant.voicekb.BuildConfig;
 import com.idefant.voicekb.VoiceKBUtils;
 import com.idefant.voicekb.R;
 import com.idefant.voicekb.core.VoiceKBInputMethodService;
+import com.idefant.voicekb.history.HistoryActivity;
 import com.idefant.voicekb.usage.UsageActivity;
-import com.idefant.voicekb.usage.UsageDatabaseHelper;
+import com.idefant.voicekb.data.VoiceKBDatabaseHelper;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -39,14 +40,14 @@ import java.util.stream.Collectors;
 public class PreferencesFragment extends PreferenceFragmentCompat {
 
     SharedPreferences sp;
-    UsageDatabaseHelper usageDatabaseHelper;
+    VoiceKBDatabaseHelper usageDatabaseHelper;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         getPreferenceManager().setSharedPreferencesName("com.idefant.voicekb");
         setPreferencesFromResource(R.xml.fragment_preferences, null);
         sp = getPreferenceManager().getSharedPreferences();
-        usageDatabaseHelper = new UsageDatabaseHelper(requireContext());
+        usageDatabaseHelper = new VoiceKBDatabaseHelper(requireContext());
 
         MultiSelectListPreference inputLanguagesPreference = findPreference("com.idefant.voicekb.input_languages");
         if (inputLanguagesPreference != null) {
@@ -109,6 +110,16 @@ public class PreferencesFragment extends PreferenceFragmentCompat {
 
             usagePreference.setOnPreferenceClickListener(preference -> {
                 Intent intent = new Intent(requireContext(), UsageActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+                return true;
+            });
+        }
+
+        Preference historyPreference = findPreference("com.idefant.voicekb.history");
+        if (historyPreference != null) {
+            historyPreference.setOnPreferenceClickListener(preference -> {
+                Intent intent = new Intent(requireContext(), HistoryActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
                 return true;

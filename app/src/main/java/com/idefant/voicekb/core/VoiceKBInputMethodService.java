@@ -72,10 +72,12 @@ import com.openai.models.audio.transcriptions.TranscriptionCreateParams;
 import com.idefant.voicekb.BuildConfig;
 import com.idefant.voicekb.VoiceKBUtils;
 import com.idefant.voicekb.R;
+import com.idefant.voicekb.data.VoiceKBDatabaseHelper;
 import com.idefant.voicekb.settings.VoiceKBSettingsActivity;
-import com.idefant.voicekb.usage.UsageDatabaseHelper;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InterruptedIOException;
 import java.io.PrintWriter;
@@ -96,7 +98,6 @@ public class VoiceKBInputMethodService extends InputMethodService {
 
     // define handlers and runnables for background tasks
     private static final int DELETE_LOOKBACK_CHARACTERS = 64;
-    private static final String PREF_RESEND_FILE_NAME = "com.idefant.voicekb.resend_file_name";
     private static final String PREF_RETURN_TO_PREVIOUS_KEYBOARD = "com.idefant.voicekb.return_to_previous_keyboard";
     private static final String PREF_RETURN_KEYBOARD = "com.idefant.voicekb.return_keyboard";
     public static final String RETURN_KEYBOARD_AUTO = "auto";
@@ -209,7 +210,10 @@ public class VoiceKBInputMethodService extends InputMethodService {
     // Keep screen awake while recording
     private boolean keepScreenAwakeApplied = false;
 
-    UsageDatabaseHelper usageDb;
+    VoiceKBDatabaseHelper db;
+
+    // Audio of the most recent history entry, reused by the resend button. Refreshed on show and after transcription.
+    private File resendAudioFile;
 
     // start method that is called when user opens the keyboard
     @SuppressLint("ClickableViewAccessibility")
@@ -225,7 +229,7 @@ public class VoiceKBInputMethodService extends InputMethodService {
 
         vibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
         sp = getSharedPreferences("com.idefant.voicekb", MODE_PRIVATE);
-        usageDb = new UsageDatabaseHelper(this);
+        db = new VoiceKBDatabaseHelper(this);
         vibrationEnabled = sp.getBoolean("com.idefant.voicekb.vibration", true);
         currentInputLanguagePos = sp.getInt("com.idefant.voicekb.input_language_pos", 0);
 
@@ -335,7 +339,7 @@ public class VoiceKBInputMethodService extends InputMethodService {
 
         resendButton.setOnClickListener(v -> {
             vibrate();
-            File resendFile = getResendAudioFile();
+            File resendFile = resendAudioFile;
             if (keyboardUiState != KeyboardUiState.PREPARING
                     && keyboardUiState != KeyboardUiState.SENDING
                     && resendFile != null
@@ -740,6 +744,9 @@ public class VoiceKBInputMethodService extends InputMethodService {
         // get the currently selected input language
         ensureCurrentInputLanguage();
 
+        // resend targets the latest history entry; refresh it before rendering the resend button
+        refreshResendAudioFile();
+
         // check if user enabled audio focus
         audioFocusEnabled = sp.getBoolean("com.idefant.voicekb.audio_focus", true);
 
@@ -868,7 +875,7 @@ public class VoiceKBInputMethodService extends InputMethodService {
         trashButton.setVisibility(showTrash ? View.VISIBLE : View.INVISIBLE);
         pauseButton.setVisibility(showPause ? View.VISIBLE : View.INVISIBLE);
         boolean resendEnabled = sp.getBoolean("com.idefant.voicekb.resend_button", false);
-        boolean hasResendAudioFile = getResendAudioFile() != null;
+        boolean hasResendAudioFile = resendAudioFile != null && resendAudioFile.exists();
         resendButton.setVisibility(resendEnabled ? View.VISIBLE : View.INVISIBLE);
         resendButton.setEnabled(!sending && keyboardUiState != KeyboardUiState.PREPARING && hasResendAudioFile);
         resendButton.setAlpha((sending || !hasResendAudioFile) ? 0.38f : 1f);
@@ -1284,7 +1291,7 @@ public class VoiceKBInputMethodService extends InputMethodService {
         if (isRecording || isPreparingRecording) return;  // prevent re-entrance
 
         NetworkWarmup.warmUpTranscriptionProvider(this, sp);
-        audioFile = new File(getCacheDir(), "audio_" + System.currentTimeMillis() + ".m4a");
+        audioFile = new File(getCacheDir(), "hist_" + System.currentTimeMillis() + ".m4a");
 
         boolean useBluetoothMic = sp.getBoolean("com.idefant.voicekb.use_bluetooth_mic", false);  // read preference: only use BT mic if enabled
         boolean btAvailable = useBluetoothMic && am.isBluetoothScoAvailableOffCall() && hasBluetoothInputDevice();  // Check if BT SCO is available and (likely) an input device is present
@@ -1419,27 +1426,67 @@ public class VoiceKBInputMethodService extends InputMethodService {
         updateKeepScreenAwake(false);
     }
 
-    private void markAudioFileForResend() {
-        if (audioFile != null && audioFile.exists()) {
-            sp.edit()
-                    .putString(PREF_RESEND_FILE_NAME, audioFile.getName())
-                    .putString("com.idefant.voicekb.last_file_name", audioFile.getName())
-                    .apply();
+    // Persists a finished recognition (success or failure) and prunes expired entries.
+    private void saveTranscriptionSuccess(String transcript, long durationSec, String provider, String model) {
+        insertHistoryEntry(transcript, null, null, durationSec, provider, model);
+    }
+
+    private void saveTranscriptionError(AppError error, long durationSec, String provider, String model) {
+        insertHistoryEntry(null, error.message, error.details, durationSec, provider, model);
+    }
+
+    private void insertHistoryEntry(String transcript, String errorMessage, String errorDetails,
+                                    long durationSec, String provider, String model) {
+        String fileName = commitAudioToHistoryDir();
+        if (fileName == null) return;
+        try {
+            long createdAt = System.currentTimeMillis();
+            db.insertHistory(createdAt, transcript, errorMessage, errorDetails,
+                    fileName, durationSec, provider, model);
+            db.pruneHistoryOlderThan(createdAt - VoiceKBDatabaseHelper.RETENTION_MS);
+        } catch (Exception e) {
+            logExceptionLocally(e);
         }
     }
 
-    private File getResendAudioFile() {
-        String fileName = sp.getString(PREF_RESEND_FILE_NAME, "");
-        if (TextUtils.isEmpty(fileName)) {
-            fileName = sp.getString("com.idefant.voicekb.last_file_name", "");
+    // Moves the just-recorded audio out of the cache into the durable history directory (rename, not
+    // a copy). A file already there (resend targets an existing entry) is referenced as-is. Returns
+    // the durable file name, or null if the audio is gone.
+    private String commitAudioToHistoryDir() {
+        if (audioFile == null || !audioFile.exists()) return null;
+        File historyDir = VoiceKBDatabaseHelper.getAudioDir(this);
+        if (historyDir.equals(audioFile.getParentFile())) return audioFile.getName();
+        File dest = new File(historyDir, audioFile.getName());
+        if (!audioFile.renameTo(dest)) {
+            try {
+                copyFile(audioFile, dest);
+                //noinspection ResultOfMethodCallIgnored
+                audioFile.delete();
+            } catch (IOException e) {
+                logExceptionLocally(e);
+                return null;
+            }
         }
-        if (TextUtils.isEmpty(fileName)) return null;
-        File file = new File(getCacheDir(), fileName);
-        return file.exists() ? file : null;
+        audioFile = dest;
+        return dest.getName();
     }
 
-    private boolean hasResendAudioFile() {
-        return sp.getBoolean("com.idefant.voicekb.resend_button", false) && getResendAudioFile() != null;
+    private static void copyFile(File src, File dest) throws IOException {
+        try (FileInputStream in = new FileInputStream(src);
+             FileOutputStream out = new FileOutputStream(dest)) {
+            byte[] buffer = new byte[8192];
+            int read;
+            while ((read = in.read(buffer)) != -1) {
+                out.write(buffer, 0, read);
+            }
+        }
+    }
+
+    // Resend reuses the audio of the most recent history entry.
+    private void refreshResendAudioFile() {
+        String fileName = db != null ? db.getLatestHistoryAudioFileName() : null;
+        File file = VoiceKBDatabaseHelper.getAudioFile(this, fileName);
+        resendAudioFile = (file != null && file.exists()) ? file : null;
     }
 
     private void restoreRecordButtonColor() {
@@ -1488,7 +1535,6 @@ public class VoiceKBInputMethodService extends InputMethodService {
 
     private void startWhisperApiRequest(boolean keepKeyboardAfterTranscription) {
         keepKeyboardAfterCurrentTranscription = keepKeyboardAfterTranscription;
-        markAudioFileForResend();
         applyRecordingIconState(false);  // recording finished -> stop pulsing
 
         keyboardUiState = KeyboardUiState.SENDING;
@@ -1513,8 +1559,9 @@ public class VoiceKBInputMethodService extends InputMethodService {
 
         speechApiThread = Executors.newSingleThreadExecutor();
         speechApiThread.execute(() -> {
+            TranscriptionApiConfig apiConfig = null;
             try {
-                TranscriptionApiConfig apiConfig = TranscriptionApiConfig.getActive(this, sp);
+                apiConfig = TranscriptionApiConfig.getActive(this, sp);
                 String proxyHost = sp.getString("com.idefant.voicekb.proxy_host", getString(R.string.voicekb_settings_proxy_hint));
 
                 OpenAIOkHttpClient.Builder clientBuilder = OpenAIOkHttpClient.builder()
@@ -1554,11 +1601,14 @@ public class VoiceKBInputMethodService extends InputMethodService {
                 }
                 String resultText = transcription.text().strip();  // Groq sometimes adds leading whitespace
 
-                usageDb.edit(apiConfig.model, VoiceKBUtils.getAudioDuration(audioFile), 0, 0, apiConfig.provider);
+                long audioDuration = VoiceKBUtils.getAudioDuration(audioFile);
+                db.edit(apiConfig.model, audioDuration, 0, 0, apiConfig.provider);
+                saveTranscriptionSuccess(resultText, audioDuration, apiConfig.providerName, apiConfig.model);
 
                 mainHandler.post(() -> commitTextToInputConnection(resultText, () -> {
                     keyboardUiState = KeyboardUiState.IDLE;
                     renderKeyboardState();
+                    refreshResendAudioFile();
                     boolean keepKeyboard = keepKeyboardAfterCurrentTranscription;
                     keepKeyboardAfterCurrentTranscription = false;
                     transientVoiceSession = false;
@@ -1573,6 +1623,10 @@ public class VoiceKBInputMethodService extends InputMethodService {
             } catch (RuntimeException e) {
                 if (!(e.getCause() instanceof InterruptedIOException)) {
                     logExceptionLocally(e);
+                    saveTranscriptionError(AppError.fromTranscriptionError(this, e),
+                            VoiceKBUtils.getAudioDuration(audioFile),
+                            apiConfig != null ? apiConfig.providerName : "",
+                            apiConfig != null ? apiConfig.model : "");
                     if (vibrationEnabled) vibrator.vibrate(VibrationEffect.createOneShot(300, VibrationEffect.DEFAULT_AMPLITUDE));
                     mainHandler.post(() -> {
                         keyboardUiState = KeyboardUiState.IDLE;
@@ -1593,6 +1647,10 @@ public class VoiceKBInputMethodService extends InputMethodService {
                     });
                 } else if (e.getCause().getMessage() != null && (e.getCause().getMessage().contains("timeout") || e.getCause().getMessage().contains("failed to connect"))) {
                     logExceptionLocally(e);
+                    saveTranscriptionError(AppError.fromTranscriptionError(this, e),
+                            VoiceKBUtils.getAudioDuration(audioFile),
+                            apiConfig != null ? apiConfig.providerName : "",
+                            apiConfig != null ? apiConfig.model : "");
                     if (vibrationEnabled) vibrator.vibrate(VibrationEffect.createOneShot(300, VibrationEffect.DEFAULT_AMPLITUDE));
                     mainHandler.post(() -> {
                         keyboardUiState = KeyboardUiState.IDLE;
@@ -1606,6 +1664,7 @@ public class VoiceKBInputMethodService extends InputMethodService {
             mainHandler.post(() -> {
                 keyboardUiState = KeyboardUiState.IDLE;
                 renderKeyboardState();
+                refreshResendAudioFile();
             });
         });
     }

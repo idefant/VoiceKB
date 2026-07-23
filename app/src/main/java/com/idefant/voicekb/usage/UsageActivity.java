@@ -21,12 +21,13 @@ import com.google.android.material.button.MaterialButton;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import com.idefant.voicekb.R;
+import com.idefant.voicekb.data.VoiceKBDatabaseHelper;
 
 import java.util.List;
 
 public class UsageActivity extends AppCompatActivity {
 
-    UsageDatabaseHelper db;
+    VoiceKBDatabaseHelper db;
 
     @SuppressLint("NotifyDataSetChanged")
     @Override
@@ -46,8 +47,8 @@ public class UsageActivity extends AppCompatActivity {
             actionBar.setTitle(R.string.voicekb_usage);
         }
 
-        db = new UsageDatabaseHelper(this);
-        List<UsageModel> data = db.getAll();
+        db = new VoiceKBDatabaseHelper(this);
+        List<UsageModel> data = db.getAllUsage();
 
         RecyclerView recyclerView = findViewById(R.id.usage_rv);
         recyclerView.setHasFixedSize(true);

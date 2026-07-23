@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.idefant.voicekb.VoiceKBUtils;
 import com.idefant.voicekb.R;
+import com.idefant.voicekb.data.VoiceKBDatabaseHelper;
 
 import java.util.List;
 
@@ -20,9 +21,9 @@ public class UsageAdapter extends RecyclerView.Adapter<UsageAdapter.RecyclerView
 
     private final AppCompatActivity activity;
     private final List<UsageModel> data;
-    private final UsageDatabaseHelper db;
+    private final VoiceKBDatabaseHelper db;
 
-    public UsageAdapter(AppCompatActivity activity, List<UsageModel> data, UsageDatabaseHelper db) {
+    public UsageAdapter(AppCompatActivity activity, List<UsageModel> data, VoiceKBDatabaseHelper db) {
         this.activity = activity;
         this.data = data;
         this.db = db;

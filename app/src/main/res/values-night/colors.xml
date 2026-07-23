@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- History screen dark overrides (mirror of voicekb-disign.pen dark theme) -->
+    <color name="voicekb_history_text_primary">#F4F6F8</color>
+    <color name="voicekb_history_text_secondary">#A6AFBC</color>
+    <color name="voicekb_history_text_muted">#7C8591</color>
+    <color name="voicekb_history_divider">#30343B</color>
+    <color name="voicekb_history_danger">#FF7378</color>
+    <color name="voicekb_history_accent_strong">#72BFEA</color>
+    <color name="voicekb_history_play_container">#1D3A4B</color>
+    <color name="voicekb_history_search_bg">#2B2F36</color>
+    <color name="voicekb_history_slider_track">#3A4049</color>
+</resources>

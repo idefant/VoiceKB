@@ -72,6 +72,13 @@
                 android:value=".settings.VoiceKBSettingsActivity" />
         </activity>
         <activity
+            android:name=".history.HistoryActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".settings.VoiceKBSettingsActivity" />
+        </activity>
+        <activity
             android:name=".settings.SystemPromptsActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize">

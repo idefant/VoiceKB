@@ -235,4 +235,33 @@
     <string name="voicekb_smart_insertion_quote_summary">Zitierten Text nach dem Markdown-Zitatmarker &gt; mit Leerzeichen groß beginnen.</string>
     <string name="voicekb_smart_insertion_blacklist_title">Blacklist für unveränderte Schreibweise</string>
     <string name="voicekb_smart_insertion_blacklist_summary">Ein Wort pro Zeile. Wenn ein Wort einen Apostroph enthält, wird nur der Teil vor dem Apostroph geprüft.</string>
+
+    <!-- History -->
+    <string name="voicekb_settings_history">Verlauf 🕘</string>
+    <string name="voicekb_history_title">Verlauf</string>
+    <string name="voicekb_history_search_hint">Transkripte durchsuchen</string>
+    <string name="voicekb_history_empty_title">Verlauf ist leer</string>
+    <string name="voicekb_history_empty_subtitle">Diktieren Sie etwas — erkannte Einträge erscheinen hier, und Sie können sie erneut anhören und kopieren.</string>
+    <string name="voicekb_history_group_today">Heute</string>
+    <string name="voicekb_history_group_yesterday">Gestern</string>
+    <string name="voicekb_history_action_copy">Kopieren</string>
+    <string name="voicekb_history_action_reprocess">Neu verarbeiten</string>
+    <string name="voicekb_history_action_delete">Löschen</string>
+    <string name="voicekb_history_copied">In die Zwischenablage kopiert</string>
+    <string name="voicekb_history_delete_title">Aufnahme löschen?</string>
+    <string name="voicekb_history_delete_message">Dieser Eintrag und seine Audiodatei werden endgültig entfernt.</string>
+    <string name="voicekb_history_delete_confirm">Löschen</string>
+    <string name="voicekb_history_reprocessing">Wird neu verarbeitet…</string>
+    <string name="voicekb_history_reprocess_failed">Aufnahme konnte nicht neu verarbeitet werden</string>
+    <string name="voicekb_history_audio_missing">Die Audiodatei ist nicht mehr verfügbar</string>
+    <string name="voicekb_history_play">Abspielen</string>
+    <string name="voicekb_history_pause">Pause</string>
+    <string name="voicekb_history_details_show">Details</string>
+    <string name="voicekb_history_details_hide">Details ausblenden</string>
+    <string name="voicekb_history_error_invalid_api_key">Ungültiger API-Schlüssel</string>
+    <string name="voicekb_history_error_quota">Kontingent überschritten</string>
+    <string name="voicekb_history_error_too_long">Aufnahme zu lang</string>
+    <string name="voicekb_history_error_format">Audioformat nicht unterstützt</string>
+    <string name="voicekb_history_error_network">Netzwerkfehler</string>
+    <string name="voicekb_history_error_timeout">Zeitüberschreitung der Anfrage</string>
 </resources>

@@ -94,11 +94,15 @@ public class VoiceKBSettingsActivity extends AppCompatActivity {
                                 return;
                             }
 
-                            // copy the inputFileUri file to app cache directory
+                            // copy the picked file into the cache; the keyboard moves it into history on transcription
+                            String ext = "";
+                            int dot = fileName != null ? fileName.lastIndexOf('.') : -1;
+                            if (dot >= 0 && dot < fileName.length() - 1) ext = fileName.substring(dot);
+                            String destName = "hist_" + System.currentTimeMillis() + ext;
                             Toast.makeText(this, getString(R.string.voicekb_file_copying_to_cache), Toast.LENGTH_SHORT).show();
                             try {
                                 InputStream inputStream = getContentResolver().openInputStream(uri);
-                                FileOutputStream outputStream = new FileOutputStream(new File(getCacheDir(), fileName));
+                                FileOutputStream outputStream = new FileOutputStream(new File(getCacheDir(), destName));
                                 byte[] buffer = new byte[4096];
                                 int bytesRead;
                                 if (inputStream != null) {
@@ -112,7 +116,7 @@ public class VoiceKBSettingsActivity extends AppCompatActivity {
                                 throw new RuntimeException(e);
                             }
 
-                            sp.edit().putString("com.idefant.voicekb.transcription_audio_file", fileName).apply();
+                            sp.edit().putString("com.idefant.voicekb.transcription_audio_file", destName).apply();
                         }
                     }
                     finish();  // close the activity after the file has been picked
