@@ -819,6 +819,20 @@ public class VoiceKBInputMethodService extends InputMethodService {
         }
     }
 
+    // Двойной короткий импульс — подтверждение вставки текста, отличимое на ощупь от одиночного тика кнопок и длинного сигнала ошибки.
+    private void vibrateSuccess() {
+        if (vibrationEnabled && vibrator != null) {
+            vibrator.vibrate(VibrationEffect.createWaveform(new long[]{0, 45, 90, 45}, -1));
+        }
+    }
+
+    // Длинный одиночный сигнал — сообщает об ошибке обработки, заметно длиннее подтверждения вставки.
+    private void vibrateError() {
+        if (vibrationEnabled && vibrator != null) {
+            vibrator.vibrate(VibrationEffect.createOneShot(300, VibrationEffect.DEFAULT_AMPLITUDE));
+        }
+    }
+
     private void applyButtonColor(MaterialButton button, int backgroundColor) {
         if (button == null) return;
         button.setBackgroundTintList(ColorStateList.valueOf(backgroundColor));
@@ -1627,7 +1641,7 @@ public class VoiceKBInputMethodService extends InputMethodService {
                             VoiceKBUtils.getAudioDuration(audioFile),
                             apiConfig != null ? apiConfig.providerName : "",
                             apiConfig != null ? apiConfig.model : "");
-                    if (vibrationEnabled) vibrator.vibrate(VibrationEffect.createOneShot(300, VibrationEffect.DEFAULT_AMPLITUDE));
+                    vibrateError();
                     mainHandler.post(() -> {
                         keyboardUiState = KeyboardUiState.IDLE;
                         renderKeyboardState();
@@ -1651,7 +1665,7 @@ public class VoiceKBInputMethodService extends InputMethodService {
                             VoiceKBUtils.getAudioDuration(audioFile),
                             apiConfig != null ? apiConfig.providerName : "",
                             apiConfig != null ? apiConfig.model : "");
-                    if (vibrationEnabled) vibrator.vibrate(VibrationEffect.createOneShot(300, VibrationEffect.DEFAULT_AMPLITUDE));
+                    vibrateError();
                     mainHandler.post(() -> {
                         keyboardUiState = KeyboardUiState.IDLE;
                         renderKeyboardState();
@@ -1682,6 +1696,7 @@ public class VoiceKBInputMethodService extends InputMethodService {
             return;
         }
         inputConnection.commitText(output, 1);
+        vibrateSuccess();
         markEditorHistoryChanged();
         if (sp.getBoolean("com.idefant.voicekb.auto_enter", false)) {
             performEnterAction();

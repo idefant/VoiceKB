@@ -68,7 +68,7 @@
     <string name="voicekb_okay">OK</string>
     <string name="voicekb_cancel">Cancelar</string>
     <string name="voicekb_settings_vibration_title">Ativar feedback tátil 📳</string>
-    <string name="voicekb_settings_vibration_summary">Vibrar ao pressionar botões e quando ocorrerem erros</string>
+    <string name="voicekb_settings_vibration_summary">Vibrar ao pressionar botões, ao inserir com sucesso e quando ocorrerem erros</string>
     <string name="voicekb_settings_usage">Ver uso 📊</string>
     <string name="voicekb_yes">Sim</string>
     <string name="voicekb_no">Não</string>

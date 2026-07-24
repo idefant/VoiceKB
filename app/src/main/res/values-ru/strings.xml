@@ -197,7 +197,7 @@
     <string name="voicekb_settings_return_keyboard_summary_fixed">Всегда переключаться на %1$s</string>
     <string name="voicekb_settings_audio_focus_summary">Приостанавливать фоновые медиа во время записи</string>
     <string name="voicekb_settings_use_bluetooth_mic_summary">Предпочитать Bluetooth-микрофон, если он доступен</string>
-    <string name="voicekb_settings_vibration_summary">Вибрация при нажатии кнопок и ошибках</string>
+    <string name="voicekb_settings_vibration_summary">Вибрация при нажатии кнопок, успешной вставке и ошибках</string>
     <string name="voicekb_settings_quick_settings_button_summary">Показывать кнопку быстрых настроек в верхней панели клавиатуры</string>
     <string name="voicekb_settings_overlay_characters_title">Изменить спецсимволы (долгое нажатие Enter)</string>
     <string name="voicekb_overlay_characters_empty">Нужно указать хотя бы один символ.</string>

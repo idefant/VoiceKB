@@ -69,7 +69,7 @@
     <string name="voicekb_okay">Okay</string>
     <string name="voicekb_cancel">Abbrechen</string>
     <string name="voicekb_settings_vibration_title">Haptisches Feedback aktivieren 📳</string>
-    <string name="voicekb_settings_vibration_summary">Vibration bei Tastendrucken und Fehlern</string>
+    <string name="voicekb_settings_vibration_summary">Vibration bei Tastendrucken, erfolgreicher Einfügung und Fehlern</string>
     <string name="voicekb_yes">Ja</string>
     <string name="voicekb_no">Nein</string>
     <string name="voicekb_usage_reset_usage_title">Nutzung zurücksetzen?</string>

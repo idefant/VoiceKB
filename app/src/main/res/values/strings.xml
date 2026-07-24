@@ -69,7 +69,7 @@
     <string name="voicekb_internet_error_msg">Couldn\'t connect to %1$s. Please check your internet connection.</string>
     <string name="voicekb_okay">Okay</string>
     <string name="voicekb_settings_vibration_title">Enable Haptic feedback 📳</string>
-    <string name="voicekb_settings_vibration_summary">Vibrate on button presses and errors</string>
+    <string name="voicekb_settings_vibration_summary">Vibrate on button presses, successful insertion, and errors</string>
     <string name="voicekb_about" translatable="false">VoiceKB v%1$s\nfrom Russia with hate</string>
     <string name="voicekb_settings_usage">View usage 📊</string>
     <string name="voicekb_yes">Yes</string>

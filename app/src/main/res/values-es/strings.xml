@@ -68,7 +68,7 @@
     <string name="voicekb_okay">Aceptar</string>
     <string name="voicekb_cancel">Cancelar</string>
     <string name="voicekb_settings_vibration_title">Activar respuesta háptica 📳</string>
-    <string name="voicekb_settings_vibration_summary">Vibrar al pulsar botones y cuando haya errores</string>
+    <string name="voicekb_settings_vibration_summary">Vibrar al pulsar botones, al insertar correctamente y cuando haya errores</string>
     <string name="voicekb_settings_usage">Ver uso 📊</string>
     <string name="voicekb_yes">Sí</string>
     <string name="voicekb_no">No</string>
