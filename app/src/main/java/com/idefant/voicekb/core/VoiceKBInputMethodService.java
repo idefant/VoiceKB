@@ -1601,13 +1601,18 @@ public class VoiceKBInputMethodService extends InputMethodService {
                         transcription = clientBuilder.build().audio().transcriptions().create(transcriptionBuilder.build()).asTranscription();
                         break;
                     } catch (RuntimeException e) {
-                        String msg = e.getMessage() != null ? e.getMessage().toLowerCase(Locale.ROOT) : "";
-                        boolean isRetryable = !msg.contains("api key") && !msg.contains("quota") && !msg.contains("audio duration")
-                                && !msg.contains("content size limit") && !msg.contains("format");
-
-                        if (isRetryable && retryCount < 3) {
+                        // Отмена пользователем (shutdownNow прерывает поток) — не повторяем.
+                        if (Thread.currentThread().isInterrupted() || e.getCause() instanceof InterruptedIOException) {
+                            throw e;
+                        }
+                        if (VoiceKBUtils.isTransientTranscriptionError(e) && retryCount < 3) {
                             retryCount++;
-                            try { Thread.sleep(3000); } catch (InterruptedException ignored) {}
+                            try {
+                                Thread.sleep(3000);
+                            } catch (InterruptedException interrupted) {
+                                Thread.currentThread().interrupt();
+                                throw e;
+                            }
                         } else {
                             throw e;
                         }

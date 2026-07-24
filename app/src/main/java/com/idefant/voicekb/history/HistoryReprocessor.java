@@ -13,8 +13,8 @@ import com.openai.models.audio.transcriptions.Transcription;
 import com.openai.models.audio.transcriptions.TranscriptionCreateParams;
 
 import java.io.File;
+import java.io.InterruptedIOException;
 import java.time.Duration;
-import java.util.Locale;
 
 /**
  * Re-runs transcription on a stored history recording. Mirrors the request the keyboard sends,
@@ -83,13 +83,18 @@ public final class HistoryReprocessor {
                 String text = transcription.text().strip();
                 return new Result(text, apiConfig.provider, apiConfig.providerName, apiConfig.model);
             } catch (RuntimeException e) {
-                String msg = e.getMessage() != null ? e.getMessage().toLowerCase(Locale.ROOT) : "";
-                boolean isRetryable = !msg.contains("api key") && !msg.contains("quota")
-                        && !msg.contains("audio duration") && !msg.contains("content size limit")
-                        && !msg.contains("format");
-                if (isRetryable && retryCount < 3) {
+                // Отмена (shutdownNow прерывает поток) — не повторяем.
+                if (Thread.currentThread().isInterrupted() || e.getCause() instanceof InterruptedIOException) {
+                    throw e;
+                }
+                if (VoiceKBUtils.isTransientTranscriptionError(e) && retryCount < 3) {
                     retryCount++;
-                    Thread.sleep(3000);
+                    try {
+                        Thread.sleep(3000);
+                    } catch (InterruptedException interrupted) {
+                        Thread.currentThread().interrupt();
+                        throw e;
+                    }
                 } else {
                     throw e;
                 }

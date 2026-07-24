@@ -9,6 +9,9 @@ import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.os.LocaleListCompat;
 
 import com.openai.client.okhttp.OpenAIOkHttpClient;
+import com.openai.errors.OpenAIIoException;
+import com.openai.errors.OpenAIRetryableException;
+import com.openai.errors.OpenAIServiceException;
 
 import java.io.File;
 import java.net.Authenticator;
@@ -417,5 +420,26 @@ public class VoiceKBUtils {
 
     private static float clamp(float value) {
         return Math.max((float) 0.0, Math.min((float) 1.0, value));
+    }
+
+    /**
+     * Единая политика повтора для запросов транскрипции. Повторяем только временные сбои:
+     * сетевые ошибки/таймауты, лимит запросов (429) и ошибки сервера (5xx). Клиентские ошибки
+     * (400/401/403/404/422 — неверный заголовок, ключ, формат, размер) постоянны, повтор бесполезен.
+     * Исчерпанную квоту (429 с "quota") тоже не повторяем — за несколько секунд она не восстановится.
+     */
+    public static boolean isTransientTranscriptionError(RuntimeException e) {
+        if (e instanceof OpenAIIoException) return true;
+        if (e instanceof OpenAIRetryableException) return true;
+        if (e instanceof OpenAIServiceException) {
+            int status = ((OpenAIServiceException) e).statusCode();
+            if (status >= 500) return true;
+            if (status == 429) {
+                String msg = e.getMessage() != null ? e.getMessage().toLowerCase(Locale.ROOT) : "";
+                return !msg.contains("quota");
+            }
+            return false;
+        }
+        return false;
     }
 }

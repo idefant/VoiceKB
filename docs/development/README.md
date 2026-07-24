@@ -10,3 +10,4 @@
 | Панель спецсимволов | [special-characters-tray.md](special-characters-tray.md) | Выбор ближайшего символа и расширенная до краёв клавиатуры область выбора |
 | Отложенная крашлитика | [crash-reporting.md](crash-reporting.md) | Почему runtime-отчётность о сбоях отключена в сборке |
 | Хранилище истории и повторная отправка | [history-storage.md](history-storage.md) | SQLite + durable-аудио, RecyclerView для длинного списка, MediaPlayer, повторная обработка и источник повторной отправки |
+| Политика повтора запросов транскрипции | [transcription-retry-policy.md](transcription-retry-policy.md) | Почему повтор классифицируется по HTTP-статусу, а не по тексту ошибки; какие сбои временные; обработка отмены |
