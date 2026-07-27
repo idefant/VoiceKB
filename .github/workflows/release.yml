@@ -41,11 +41,16 @@ jobs:
         run: ./gradlew assembleRelease --no-daemon --console=plain
 
       - name: Prepare release files
+        id: prepare
         shell: pwsh
         run: |
           $tag = "${{ github.ref_name }}"
           $apkName = "VoiceKB-$tag.apk"
           Copy-Item "app/build/outputs/apk/release/app-release.apk" $apkName
+
+          # Semver: любой суффикс через дефис (-alpha.1, -beta.2, -rc.1) — нестабильная версия.
+          $prerelease = if ($tag -match '^v[0-9.]+-') { "true" } else { "false" }
+          "prerelease=$prerelease" | Add-Content $env:GITHUB_OUTPUT
 
           $changelog = Get-Content "CHANGELOG.md" -Raw
           $pattern = "(?ms)^##\s+$([regex]::Escape($tag))\s*(.*?)(?=^##\s+|\z)"
@@ -62,3 +67,5 @@ jobs:
         with:
           body_path: release-notes.md
           files: VoiceKB-${{ github.ref_name }}.apk
+          prerelease: ${{ steps.prepare.outputs.prerelease }}
+          make_latest: ${{ steps.prepare.outputs.prerelease == 'false' }}
